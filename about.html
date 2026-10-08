@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaPure Systems · Home Water Softener & Filtration Installer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230284c7' rx='20'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial'%3E💧%3C/text%3E%3C/svg%3E" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        navy: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#070d18',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+            padding-top: 74px;
+        }
+
+        /* ===== ATTRACTIVE OCEAN & PURE WATER BLUE PALETTE ===== */
+        :root {
+            color-scheme: light;
+            --bg-color: #f8fafc;          /* Crisp Ice Slate */
+            --bg-secondary: #f0f7ff;      /* Fresh Aqua Tint */
+            --bg-card: #ffffff;
+            --bg-inverted: #07111e;
+            --text-main: #0f172a;         /* Deep Navy Slate */
+            --text-muted: #475569;        /* Balanced Slate */
+            --text-dim: #94a3b8;
+            --accent: #0284c7;            /* Hydro Sky/Cyan Blue */
+            --accent-dark: #0369a1;       /* Deep Marine */
+            --accent-light: #e0f2fe;      /* Water Mist */
+            --accent-pale: #f0f9ff;
+            --border-color: #cbd5e1;
+            --border-light: rgba(2, 132, 199, 0.22);
+            --nav-bg: rgba(248, 250, 252, 0.94);
+            --drawer-bg: rgba(255, 255, 255, 0.98);
+            --menu-hover-bg: rgba(2, 132, 199, 0.10);
+            --shadow-color: rgba(2, 132, 199, 0.16);
+            --gradient-accent: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+        }
+
+        body.dark-mode {
+            color-scheme: dark;
+            --bg-color: #07111e;          /* Deep Midnight Oceanic */
+            --bg-secondary: #0b192c;      /* Abyssal Blue */
+            --bg-card: #0f2238;
+            --bg-inverted: #f0f9ff;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent: #38bdf8;            /* Bright Vibrant Water Cyan */
+            --accent-dark: #0284c7;
+            --accent-light: #162c46;
+            --accent-pale: #0b192c;
+            --border-color: #1e3a5f;
+            --border-light: rgba(56, 189, 248, 0.22);
+            --nav-bg: rgba(7, 17, 30, 0.94);
+            --drawer-bg: rgba(7, 17, 30, 0.98);
+            --menu-hover-bg: rgba(56, 189, 248, 0.12);
+            --shadow-color: rgba(56, 189, 248, 0.08);
+            --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, .brand-logo, .font-display {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        p {
+            line-height: 1.7;
+        }
+
+        /* ===== PILL NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--nav-bg);
+            padding: 0 28px;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            border-bottom: 1px solid transparent;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .navbar.scrolled {
+            height: 64px;
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: 0 4px 30px var(--shadow-color);
+        }
+
+        .nav-pills {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-secondary);
+            padding: 4px;
+            border-radius: 60px;
+            border: 1px solid var(--border-light);
+        }
+
+        .nav-pill {
+            padding: 8px 18px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-radius: 40px;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+
+        .nav-pill:hover {
+            color: var(--text-main);
+            background: rgba(2, 132, 199, 0.08);
+        }
+
+        .nav-pill.active {
+            background: var(--gradient-accent);
+            color: #ffffff !important;
+            box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
+        }
+
+        .dropdown-pill {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-pill .nav-pill {
+            padding-right: 14px;
+        }
+        .dropdown-pill .nav-pill .fa-chevron-down {
+            font-size: 8px;
+            margin-left: 2px;
+            opacity: 0.6;
+            transition: transform 0.25s ease;
+        }
+        .dropdown-pill:hover .nav-pill .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        .dropdown-pill-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 210px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 6px 4px;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(6px) scale(0.96);
+            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: 100;
+        }
+        .dropdown-pill:hover .dropdown-pill-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .dropdown-pill-item {
+            display: block;
+            padding: 10px 18px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        .dropdown-pill-item:hover {
+            background: var(--menu-hover-bg);
+            color: var(--accent);
+            padding-left: 24px;
+        }
+        .dropdown-pill-item.active {
+            color: var(--accent);
+            background: rgba(2, 132, 199, 0.08);
+        }
+        [dir="rtl"] .dropdown-pill-item:hover {
+            padding-left: 18px;
+            padding-right: 24px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 40px;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+        }
+        .btn-solid {
+            background: var(--gradient-accent);
+            color: #ffffff !important;
+            border: none;
+        }
+        .btn-solid:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 26px rgba(2, 132, 199, 0.38);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent) !important;
+            background: var(--menu-hover-bg);
+        }
+
+        /* ===== TOGGLES ===== */
+        .theme-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+        .theme-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            transform: rotate(20deg);
+        }
+        .rtl-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 40px;
+            padding: 6px 14px;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        .rtl-toggle:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* ===== BRAND LOGO ===== */
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .brand-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(2, 132, 199, 0.35);
+            background: rgba(2, 132, 199, 0.10);
+            transition: all 0.3s ease;
+        }
+        .brand-icon-wrapper i {
+            color: var(--accent);
+            font-size: 1.15rem;
+        }
+        .brand-logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+        .brand-logo span {
+            color: var(--accent);
+        }
+
+        /* ===== MOBILE DRAWER ===== */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(7, 17, 30, 0.65);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s ease;
+            backdrop-filter: blur(4px);
+        }
+        .drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .fullscreen-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 380px;
+            height: 100dvh;
+            background: var(--drawer-bg);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100%);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 1px solid var(--border-light);
+        }
+        [dir="rtl"] .fullscreen-menu {
+            right: auto;
+            left: 0;
+            transform: translateX(-100%);
+            border-left: none;
+            border-right: 1px solid var(--border-light);
+        }
+        .fullscreen-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+        .mobile-link {
+            display: block;
+            width: 100%;
+            padding: 16px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.25s;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .mobile-link:hover {
+            color: var(--accent);
+            padding-left: 36px;
+            background: var(--menu-hover-bg);
+        }
+        [dir="rtl"] .mobile-link:hover {
+            padding-left: 28px;
+            padding-right: 36px;
+        }
+        .mobile-menu-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-size: 1.4rem;
+            border-radius: 50%;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+        .mobile-dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 28px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-main);
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .mobile-dropdown-header i {
+            transition: transform 0.3s ease;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+        .mobile-dropdown-header.open i {
+            transform: rotate(180deg);
+        }
+        .mobile-dropdown-items {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            background: var(--bg-secondary);
+        }
+        .mobile-dropdown-items.open {
+            max-height: 200px;
+            padding: 6px 0 10px 16px;
+        }
+        .mobile-dropdown-link {
+            border-bottom: none !important;
+            padding: 10px 28px !important;
+            font-size: 0.9rem !important;
+            color: var(--text-muted) !important;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #07111e !important;
+            border-top: 1px solid rgba(2, 132, 199, 0.25) !important;
+            padding-top: 60px;
+            color: #f1f5f9 !important;
+        }
+        footer h4 {
+            color: #f8fafc !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+        }
+        footer a, footer li, footer span:not(.brand-logo span) {
+            color: #94a3b8 !important;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        footer a:hover {
+            color: var(--accent) !important;
+        }
+        footer .social-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(2, 132, 199, 0.25) !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: #94a3b8 !important;
+            background: transparent;
+        }
+        footer .social-circle:hover {
+            background: var(--gradient-accent) !important;
+            border-color: var(--accent) !important;
+            color: #ffffff !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+        }
+
+        .theme-btn, .rtl-toggle { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; }
+        .theme-btn { width: 38px; padding: 0; }
+        .rtl-toggle { padding: 0 16px; }
+        .navbar .btn { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- PILL NAVBAR (WITH Book Now PAGE IN NAVBAR)                      -->
+    <!-- ============================================================ -->
+    <nav class="navbar" id="main-nav">
+        <div class="w-full flex items-center justify-between max-w-[1440px] mx-auto">
+            <!-- Brand -->
+            <a href="#home" class="brand-link">
+                <div class="brand-icon-wrapper">
+                    <i class="fas fa-droplet"></i>
+                </div>
+                <div class="brand-logo">
+                    <span>Aqua</span>Pure
+                </div>
+            </a>
+
+            <!-- Desktop Pill Navigation -->
+            <div class="hidden xl:flex items-center justify-center flex-1 px-4">
+                <div class="nav-pills">
+                    <div class="dropdown-pill">
+                        <a href="index.html" class="nav-pill" id="home-pill-btn">
+                            Home <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-pill-menu">
+                            <a href="index.html" class="dropdown-pill-item">home</a>
+                            <a href="home-2.html" class="dropdown-pill-item">home-2</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-pill active">About</a>
+                    <a href="solutions.html" class="nav-pill">Solutions</a>
+                    <a href="products.html" class="nav-pill">Products</a>
+                    <a href="pricing.html" class="nav-pill">Pricing</a>
+                    <a href="water-testing.html" class="nav-pill">Water Testing</a>
+                    <a href="faq.html" class="nav-pill">faq</a>
+                    <a href="contact.html" class="nav-pill">Contact</a>
+                </div>
+            </div>
+
+            <!-- Desktop Actions -->
+            <div class="hidden xl:flex items-center gap-3">
+               <a href="#" class="btn btn-outline !px-5 !text-[10px]">
+                    <i class="fas fa-sign-in-alt text-xs mr-1 text-[var(--accent)]"></i> Book Now
+                </a>
+               
+                <div class="w-px h-5 bg-[var(--border-light)] mx-1"></div>
+                <button id="theme-toggle-desktop" class="theme-btn" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon-desktop"></i>
+                </button>
+                <button id="rtl-btn" class="rtl-toggle" title="Toggle LTR/RTL">LTR</button>
+            </div>
+
+            <!-- Mobile Trigger -->
+            <div class="xl:hidden flex items-center justify-end gap-2">
+                <button id="mobile-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- MOBILE DRAWER                                                -->
+    <!-- ============================================================ -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="fullscreen-menu" id="fullscreen-menu">
+        <div class="w-full px-5 py-5 flex justify-between items-center shrink-0 border-b border-[var(--border-light)]">
+            <a href="index.html" class="brand-link" onclick="closeMenu()">
+                <div class="brand-icon-wrapper">
+                    <i class="fas fa-droplet"></i>
+                </div>
+                <div class="brand-logo">
+                    <span>Aqua</span>Pure
+                </div>
+            </a>
+            <button id="close-menu" class="w-10 h-10 flex items-center justify-center text-2xl text-[var(--text-main)] hover:text-[var(--accent)] transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col w-full overflow-y-auto flex-1 py-3">
+            <div class="mobile-dropdown">
+                <div class="mobile-dropdown-header" id="mobile-home-toggle">
+                    <span>Home</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-dropdown-items" id="mobile-home-items">
+                    <a href="index.html" class="mobile-link mobile-dropdown-link" onclick="closeMenu()">Home</a>
+                    <a href="home-2.html" class="mobile-link mobile-dropdown-link" onclick="closeMenu()">Home-2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-link active" onclick="closeMenu()">About</a>
+            <a href="solutions.html" class="mobile-link" onclick="closeMenu()">Solutions</a>
+            <a href="products.html" class="mobile-link" onclick="closeMenu()">Products</a>
+            <a href="pricing.html" class="mobile-link" onclick="closeMenu()">Pricing</a>
+            <a href="water-testing.html" class="mobile-link" onclick="closeMenu()">Water Testing</a>
+            <a href="faq.html" class="mobile-link" onclick="closeMenu()">FAQ</a>
+            <a href="contact.html" class="mobile-link" onclick="closeMenu()">Contact</a>
+        </div>
+
+        <div class="w-full px-5 py-5 border-t border-[var(--border-light)] flex flex-col gap-4 shrink-0 bg-[var(--bg-secondary)]">
+            <div class="grid grid-cols-2 gap-3 w-full">
+                <a href="Book Now.html" class="btn btn-outline w-full !py-3 text-center" onclick="closeMenu()">
+                    <i class="fas fa-sign-in-alt mr-2"></i> Book Now
+                </a>
+            </div>
+            <div class="flex justify-between items-center w-full">
+                <div class="flex items-center gap-3">
+                    <span class="text-[var(--text-dim)] font-medium text-[10px] uppercase tracking-widest">Theme</span>
+                    <button id="theme-toggle-mobile" class="theme-btn" aria-label="Toggle theme">
+                        <i class="fas fa-moon" id="theme-icon-mobile"></i>
+                    </button>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-[var(--text-dim)] font-medium text-[10px] uppercase tracking-widest">Dir</span>
+                    <button id="rtl-toggle-mobile" class="rtl-toggle" title="Toggle RTL/LTR">
+                        <span class="rtl-text">LTR</span>
+                        <i class="fas fa-arrow-right-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+            <a href="#contact" class="btn btn-solid w-full !py-2.5 text-center" onclick="closeMenu()">
+                <i class="fas fa-vial mr-2"></i> Book Free Water Test
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- FULL-VIEWPORT HERO IMAGE SECTION (ABOUT)                     -->
+    <!-- ============================================================ -->
+    <section class="relative min-h-[calc(100vh-74px)] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <img 
+            src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=2400&q=85" 
+            alt="Water filtration installation engineering" 
+            class="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        <!-- Contrast and Tint Overlays -->
+        <div class="absolute inset-0 bg-[#07111e]/75 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#07111e] via-transparent to-[#07111e]/50"></div>
+        <div class="absolute inset-0 bg-radial-gradient pointer-events-none" style="background: radial-gradient(circle at center, rgba(2, 132, 199, 0.22) 0%, transparent 70%);"></div>
+
+        <!-- Hero Content Overlay -->
+        <div class="relative z-10 max-w-[1200px] mx-auto px-6 sm:px-8 text-center flex flex-col items-center py-20">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#38bdf8] mb-6">
+                <i class="fas fa-award text-xs"></i>
+                <span class="text-[11px] font-semibold tracking-widest uppercase">Since 2008 · Certified Master Filtration Plumbers</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] font-display max-w-4xl mb-6">
+                Engineering Water Purity <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] via-[#7dd3fc] to-white">
+                    For Generations to Come.
+                </span>
+            </h1>
+
+            <p class="text-base sm:text-xl text-slate-200 max-w-3xl font-normal leading-relaxed mb-10 text-center">
+                We bridge the gap between municipal water realities and clean drinking standards. AquaPure provides precision-engineered filtration rigs and whole-home softening systems installed by licensed master tradesmen.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto mb-14">
+                <a href="contact.html" class="btn btn-solid !py-4 !px-8 text-xs tracking-wider shadow-2xl">
+                    <i class="fas fa-handshake text-xs mr-1"></i>
+                    <span>Meet Our Engineers</span>
+                </a>
+                <a href="solutions.html" class="btn btn-outline !text-white !border-white/30 hover:!border-[#38bdf8] !py-4 !px-8 text-xs tracking-wider bg-white/5 backdrop-blur-sm">
+                    <i class="fas fa-microscope text-xs mr-1 text-[#38bdf8]"></i>
+                    <span>Our Filtration Technology</span>
+                </a>
+            </div>
+
+            <!-- Stats Bar Inside Hero -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/15">
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-bold text-white font-display">18+</div>
+                    <div class="text-[11px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Years Active</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-bold text-[#38bdf8] font-display">12,500+</div>
+                    <div class="text-[11px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Systems Installed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-bold text-white font-display">100%</div>
+                    <div class="text-[11px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Licensed Plumbers</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-bold text-[#38bdf8] font-display">Zero</div>
+                    <div class="text-[11px] text-slate-300 uppercase tracking-wider font-semibold mt-1">Harmful Byproducts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: ABOUT US (EXECUTIVE OVERVIEW)                     -->
+    <!-- ============================================================ -->
+    <section id="about-us" class="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-light)] transition-colors">
+        <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-light)] text-[var(--accent)] text-xs font-bold tracking-widest uppercase">
+                        <i class="fas fa-droplet text-xs"></i> Master Pure-Water Standard
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] font-display leading-[1.15]">
+                        Redefining Domestic Water Infrastructure with Architectural Precision.
+                    </h2>
+                    <p class="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
+                        At AquaPure Systems, we believe clean water is not an upgrade—it is the foundational cornerstone of wellness, home longevity, and everyday luxury. Founded by Master Plumbers and hydraulic specialists, we craft custom water filtration and ion-softening networks that outlast standard residential fixtures.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-3">
+                        <div class="p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm">
+                            <div class="text-2xl font-black text-[var(--accent)] font-display">NSF/ANSI</div>
+                            <div class="text-xs font-semibold text-[var(--text-main)] mt-1 uppercase tracking-wider">Certified 44, 58 & 372</div>
+                            <p class="text-[11px] text-[var(--text-muted)] mt-1">Lead-free, medical-grade components in every loop.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm">
+                            <div class="text-2xl font-black text-[var(--accent)] font-display">10-Year</div>
+                            <div class="text-xs font-semibold text-[var(--text-main)] mt-1 uppercase tracking-wider">Bumper-to-Bumper</div>
+                            <p class="text-[11px] text-[var(--text-muted)] mt-1">Comprehensive hydraulic coverage and valve support.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-3xl overflow-hidden border border-[var(--border-light)] shadow-2xl group">
+                        <img 
+                            src="img/pic6.webp" 
+                            alt="Luxury residential plumbing interior" 
+                            class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-white/10 dark:bg-black/30 backdrop-blur-md border border-white/20 text-white">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-[var(--accent)] text-white flex items-center justify-center text-xl shrink-0">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-sm">Engineered For Luxury Living</div>
+                                    <div class="text-xs text-slate-200 mt-0.5">Ultra-silent high-efficiency regeneration cycles tuned for estate residences.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- ============================================================ -->
+    <!-- SECTION 2: OUR STORY (HERITAGE & CRAFTSMANSHIP - FIXED)      -->
+    <!-- ============================================================ -->
+    <section id="our-story" class="py-12 sm:py-16 md:py-24 bg-[var(--bg-color)] transition-colors overflow-hidden">
+        <div class="max-w-[1380px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 w-full">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-16">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--accent)] text-[10px] sm:text-xs font-bold tracking-widest uppercase">
+                    Heritage &amp; Craft
+                </span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[var(--text-main)] font-display mt-3 leading-tight break-words">
+                    Born to Shield Homes from Hard Water Decay.
+                </h2>
+                <p class="text-xs sm:text-sm md:text-base text-[var(--text-muted)] mt-3 leading-relaxed">
+                    From a regional master plumbing outfit to an industry benchmark in certified residential filtration.
+                </p>
+            </div>
+
+            <!-- 3-Column Timeline Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 items-stretch">
+                
+                <!-- Chapter 01 -->
+                <div class="p-6 sm:p-7 lg:p-8 rounded-2xl sm:rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:shadow-xl hover:border-[var(--accent)] transition-all duration-300 flex flex-col justify-between min-w-0 h-full group">
+                    <div class="min-w-0">
+                        <!-- Fixed Year Badge -->
+                        <div class="inline-flex items-center justify-center min-w-[56px] h-9 px-3.5 rounded-xl bg-[var(--accent-light)] dark:bg-[var(--accent)]/15 border border-[var(--border-light)] text-[var(--accent)] dark:text-[var(--accent)] text-sm sm:text-base font-extrabold font-display mb-5 group-hover:scale-105 transition-transform">
+                            2008
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-[var(--text-main)] mb-2.5 font-display break-words">
+                            The Diagnostic Awakening
+                        </h3>
+                        <p class="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed mb-6">
+                            After observing recurring heater tank failures and corroded copper lines caused by untreated hard water, our founders engineered their first closed-loop twin-tank softener tailored for residential layouts.
+                        </p>
+                    </div>
+                    <div class="text-[11px] sm:text-xs font-semibold text-[var(--accent)] tracking-wider uppercase border-t border-[var(--border-light)] pt-4 flex items-center justify-between">
+                        <span>Chapter 01 · Inception</span>
+                        <i class="fas fa-arrow-right text-[10px] rtl:rotate-180 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"></i>
+                    </div>
+                </div>
+
+                <!-- Chapter 02 -->
+                <div class="p-6 sm:p-7 lg:p-8 rounded-2xl sm:rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:shadow-xl hover:border-[var(--accent)] transition-all duration-300 flex flex-col justify-between min-w-0 h-full group">
+                    <div class="min-w-0">
+                        <!-- Fixed Year Badge -->
+                        <div class="inline-flex items-center justify-center min-w-[56px] h-9 px-3.5 rounded-xl bg-[var(--accent-light)] dark:bg-[var(--accent)]/15 border border-[var(--border-light)] text-[var(--accent)] dark:text-[var(--accent)] text-sm sm:text-base font-extrabold font-display mb-5 group-hover:scale-105 transition-transform">
+                            2016
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-[var(--text-main)] mb-2.5 font-display break-words">
+                            Pioneering Micro-Regen Valves
+                        </h3>
+                        <p class="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed mb-6">
+                            Standard softeners wasted hundreds of gallons on rigid schedules. We engineered proprietary smart-meter digital bypass valves that track consumption and backwash solely on true volume demand.
+                        </p>
+                    </div>
+                    <div class="text-[11px] sm:text-xs font-semibold text-[var(--accent)] tracking-wider uppercase border-t border-[var(--border-light)] pt-4 flex items-center justify-between">
+                        <span>Chapter 02 · Evolution</span>
+                        <i class="fas fa-arrow-right text-[10px] rtl:rotate-180 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"></i>
+                    </div>
+                </div>
+
+                <!-- Chapter 03 -->
+                <div class="p-6 sm:p-7 lg:p-8 rounded-2xl sm:rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:shadow-xl hover:border-[var(--accent)] transition-all duration-300 flex flex-col justify-between min-w-0 h-full group">
+                    <div class="min-w-0">
+                        <!-- Fixed Year Badge -->
+                        <div class="inline-flex items-center justify-center min-w-[56px] h-9 px-3.5 rounded-xl bg-[var(--accent-light)] dark:bg-[var(--accent)]/15 border border-[var(--border-light)] text-[var(--accent)] dark:text-[var(--accent)] text-sm sm:text-base font-extrabold font-display mb-5 group-hover:scale-105 transition-transform">
+                            Today
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-[var(--text-main)] mb-2.5 font-display break-words">
+                            Molecular Purification Standard
+                        </h3>
+                        <p class="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed mb-6">
+                            With over 12,500 turnkey home installations completed, AquaPure combines catalytic carbon adsorption, reverse osmosis, and zero-grain conditioning into single, seamless mechanical setups[cite: 2].
+                        </p>
+                    </div>
+                    <div class="text-[11px] sm:text-xs font-semibold text-[var(--accent)] tracking-wider uppercase border-t border-[var(--border-light)] pt-4 flex items-center justify-between">
+                        <span>Chapter 03 · Leadership</span>
+                        <i class="fas fa-arrow-right text-[10px] rtl:rotate-180 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: MISSION & VISION (ARCHITECTURAL PURITY)           -->
+    <!-- ============================================================ -->
+    <section id="mission-vision" class="py-24 bg-[var(--bg-secondary)] border-y border-[var(--border-light)] transition-colors">
+        <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="p-10 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-lg relative overflow-hidden flex flex-col justify-between">
+                    <div class="w-24 h-24 rounded-full bg-[var(--accent)]/10 absolute -top-8 -right-8 pointer-events-none"></div>
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-4">
+                            <i class="fas fa-bullseye"></i> Core Purpose
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] font-display mb-4">
+                            Our Mission: To Safeguard Every Drop Flowing Through Your Home.
+                        </h3>
+                        <p class="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed mb-6">
+                            To engineer, install, and service world-class water treatment systems that eliminate toxic chemicals, neutralize scale, shield sensitive plumbing appliances, and supply nourishing alkaline drinking water to families without ecological waste.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-[var(--border-light)] grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="text-lg font-bold text-[var(--text-main)] font-display">Zero Plastic Waste</div>
+                            <div class="text-xs text-[var(--text-muted)] mt-0.5">Eliminates single-use bottled water dependencies entirely.</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-[var(--text-main)] font-display">Zero Carbon Footprint</div>
+                            <div class="text-xs text-[var(--text-muted)] mt-0.5">Low-power smart electronic valves drawn on 12V DC.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-10 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-lg relative overflow-hidden flex flex-col justify-between">
+                    <div class="w-24 h-24 rounded-full bg-emerald-500/10 absolute -top-8 -right-8 pointer-events-none"></div>
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-500 mb-4">
+                            <i class="fas fa-compass"></i> Forward Outlook
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] font-display mb-4">
+                            Our Vision: The Benchmark Standard for Domestic Water Hygiene.
+                        </h3>
+                        <p class="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed mb-6">
+                            We envision an architectural future where every modern luxury home is constructed with integrated laboratory-grade water purification as a mandatory utility standard, eradicating microplastics, PFAS, and heavy scale forever.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-[var(--border-light)] grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="text-lg font-bold text-[var(--text-main)] font-display">Proactive Monitoring</div>
+                            <div class="text-xs text-[var(--text-muted)] mt-0.5">IoT telemetry delivering instant leak and resin status.</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-[var(--text-main)] font-display">Purity For Life</div>
+                            <div class="text-xs text-[var(--text-muted)] mt-0.5">Continuous technician support for decades to come.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: WHY CHOOSE US (LUXURY VALUE PROPOSITIONS)         -->
+    <!-- ============================================================ -->
+    <section id="why-choose-us" class="py-24 bg-[var(--bg-color)] transition-colors">
+        <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+                <div class="max-w-xl">
+                    <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Uncompromising Quality</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[var(--text-main)] font-display mt-2">
+                        Why Discerning Homeowners Choose AquaPure Systems.
+                    </h2>
+                </div>
+                <p class="text-[var(--text-muted)] text-sm max-w-md">
+                    We deliver an executive-tier experience from our initial digital mineral assay to seamless white-glove copper sweat installations.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-7 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] hover:border-[var(--accent)] shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-id-badge"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 font-display">Licensed Master Tradesmen</h3>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">No generic subcontractors. Every loop is fitted by certified, background-checked plumbing professionals.</p>
+                </div>
+                <div class="p-7 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] hover:border-[var(--accent)] shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-sliders"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 font-display">Custom Water Sizing</h3>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Systems measured to your home’s exact bathroom count, flow rate (GPM), and inlet hardness rating.</p>
+                </div>
+                <div class="p-7 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] hover:border-[var(--accent)] shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 font-display">Transferable Guarantee</h3>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Our 10-year warranty transfers smoothly to new property owners, augmenting your home’s appraisal value.</p>
+                </div>
+                <div class="p-7 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] hover:border-[var(--accent)] shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-boxes-packing"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 font-display">Zero-Mess Installation</h3>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Floor protection runners, spotless tool handling, full old-system haul away, and complimentary initial salt delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: OUR TEAM (LEADERSHIP & MASTER PLUMBERS)          -->
+    <!-- ============================================================ -->
+    <section id="our-team" class="py-24 bg-[var(--bg-secondary)] border-t border-[var(--border-light)] transition-colors">
+        <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Specialist Leadership</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[var(--text-main)] font-display mt-2">
+                    Meet the Specialists Behind Your Pure Water.
+                </h2>
+                <p class="text-[var(--text-muted)] text-sm mt-3">Seasoned hydrologists, licensed mechanical engineers, and master plumbing directors.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm text-center group">
+                    <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-[var(--accent)] mb-4">
+                        <img src="img/pp3.webp" alt="Sarah Jenkins" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    </div>
+                    <h3 class="text-base font-bold text-[var(--text-main)] font-display">Sarah Jenkins, PE</h3>
+                    <div class="text-xs text-[var(--accent)] font-semibold mt-0.5">Chief Water Quality Chemist</div>
+                    <p class="text-xs text-[var(--text-muted)] mt-3 leading-relaxed">14+ years evaluating municipal water reservoirs and chemical purification regimens.</p>
+                </div>
+                <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm text-center group">
+                    <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-[var(--accent)] mb-4">
+                        <img src="img/pp1.webp" alt="Marcus Vance" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    </div>
+                    <h3 class="text-base font-bold text-[var(--text-main)] font-display">Marcus Vance</h3>
+                    <div class="text-xs text-[var(--accent)] font-semibold mt-0.5">Master Plumber & Field Director</div>
+                    <p class="text-xs text-[var(--text-muted)] mt-3 leading-relaxed">Oversees all copper-loop integrations and pressure regulation compliance standards.</p>
+                </div>
+                <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm text-center group">
+                    <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-[var(--accent)] mb-4">
+                        <img src="img/pp4.webp" alt="Elena Rostova" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    </div>
+                    <h3 class="text-base font-bold text-[var(--text-main)] font-display">Elena Rostova</h3>
+                    <div class="text-xs text-[var(--accent)] font-semibold mt-0.5">Head of Hydraulic R&D</div>
+                    <p class="text-xs text-[var(--text-muted)] mt-3 leading-relaxed">Architect of our high-efficiency brine recovery valves and low-friction filtration tanks.</p>
+                </div>
+                <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm text-center group">
+                    <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-[var(--accent)] mb-4">
+                        <img src="img/pp2.webp" alt="David Sterling" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    </div>
+                    <h3 class="text-base font-bold text-[var(--text-main)] font-display">David Sterling</h3>
+                    <div class="text-xs text-[var(--accent)] font-semibold mt-0.5">Director of Client Experience</div>
+                    <p class="text-xs text-[var(--text-muted)] mt-3 leading-relaxed">Dedicated concierge ensuring smooth warranty transitions, salt top-ups, and annual checks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6: CONTACT US (LUXURY APPOINTMENT & CONSULTATION)    -->
+    <!-- ============================================================ -->
+    <section id="contact-us" class="py-24 bg-[var(--bg-color)] transition-colors">
+        <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="p-8 sm:p-12 lg:p-16 rounded-[36px] bg-[var(--bg-card)] border border-[var(--border-light)] shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Concierge Consultation</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] font-display leading-tight">
+                            Elevate Your Water Standard Today.
+                        </h2>
+                        <p class="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
+                            Connect with an AquaPure hydraulic specialist to schedule your comprehensive water diagnostics assay or discuss residential filtration options for your custom build.
+                        </p>
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-light)] flex items-center justify-center text-[var(--accent)] shrink-0">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-[var(--text-dim)] uppercase tracking-wider">Direct Client Line</div>
+                                    <a href="tel:+18005557873" class="text-sm font-bold text-[var(--text-main)] hover:text-[var(--accent)]">(800) 555-PURE (7873)</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-light)] flex items-center justify-center text-[var(--accent)] shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-[var(--text-dim)] uppercase tracking-wider">Technical Office</div>
+                                    <a href="mailto:service@aquapuresoftener.com" class="text-sm font-bold text-[var(--text-main)] hover:text-[var(--accent)]">service@aquapuresoftener.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Consultation inquiry received! A senior hydraulic engineer will be in touch within 2 business hours.');">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">Full Name</label>
+                                    <input type="text" required placeholder="Alexander Vance" class="form-input" />
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">Direct Phone</label>
+                                    <input type="tel" required placeholder="(555) 234-5678" class="form-input" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">Email Address</label>
+                                <input type="email" required placeholder="alex@domain.com" class="form-input" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">Scope of Inquiry</label>
+                                <select class="form-input">
+                                    <option>Estate Whole-Home Softener & Filter</option>
+                                    <option>Comprehensive Laboratory Water Audit</option>
+                                    <option>Custom Architectural Home Build Consultation</option>
+                                    <option>Existing System Upgrades / Warranty Service</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-solid w-full !py-4 text-xs tracking-wider shadow-lg">
+                                <i class="fas fa-paper-plane mr-2"></i> Request Private Consultation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER (WATER SOFTENER & FILTRATION INSTALLER)               -->
+    <!-- ============================================================ -->
+    <footer>
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Brand Info -->
+                <div>
+                    <a href="index.html" class="brand-link inline-flex">
+                        <div class="brand-icon-wrapper">
+                            <i class="fas fa-droplet"></i>
+                        </div>
+                        <div class="brand-logo" style="color: #f8fafc !important;">
+                            <span style="color: var(--accent) !important;">Aqua</span><span style="color: #f8fafc !important;">Pure</span>
+                        </div>
+                    </a>
+                    <p class="text-[#94a3b8] text-sm leading-relaxed mt-4">Professional residential water softener and whole-home filtration installation. Protecting household appliances, water heaters, and family health with certified water treatment.</p>
+                    <div class="flex gap-3 mt-5">
+                        <a href="https://facebook.com" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" class="social-circle"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com" class="social-circle"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Explore Links -->
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="index.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Home</a></li>
+                        <li><a href="about.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> About</a></li>
+                        <li><a href="solutions.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i>Solutions</a></li>
+                        <li><a href="products.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Products</a></li>
+                        <li><a href="water-testing.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Water Testing</a></li>
+                        <li><a href="contact.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i>contact</a></li>
+                        <li><a href="Book Now.html" class="hover:pl-2 transition-all inline-flex items-center gap-2 text-[var(--accent)]"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i>Book Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Offerings -->
+                <div>
+                    <h4>System Types</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="products.html#smart-ion-exchange-softeners" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Smart Ion-Exchange Softeners</a></li>
+                        <li><a href="products.html#catalytic-carbon-filtration" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Catalytic Carbon Filtration</a></li>
+                        <li><a href="products.html#reverse-osmosis-ro-systems" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Reverse Osmosis (RO) Systems</a></li>
+                        <li><a href="products.html#uv-microbial-sterilization" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> UV Microbial Sterilization</a></li>
+                        <li><a href="products.html#well-water铁-sulfur-filter" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Well Water Iron &amp; Sulfur Filter</a></li>
+                    </ul>
+                </div>
+
+                <!-- Studio / Office -->
+                <div>
+                    <h4>Installer Headquarters</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-[var(--accent)] mt-0.5"></i>
+                            <span class="text-[#94a3b8]">742 Clearwater Blvd, Suite 200, Metro Area</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-phone text-[var(--accent)] mt-0.5"></i>
+                            <span class="text-[#94a3b8]"><a href="tel:+18005557873">(800) 555-PURE (7873)</a></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-envelope text-[var(--accent)] mt-0.5"></i>
+                            <span class="text-[#94a3b8]"><a href="mailto:service@aquapuresoftener.com">service@aquapuresoftener.com</a></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-clock text-[var(--accent)] mt-0.5"></i>
+                            <span class="text-[#94a3b8]">Mon–Fri 7am–7pm · Sat 8am–4pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-[rgba(2,132,199,0.15)] py-6 mt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-[#64748b]">&copy; 2026 <span class="text-[var(--accent)] font-semibold">AquaPure</span> Solutions LLC. All rights reserved. Master Licensed Plumbers.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="warranty.html" class="text-[#64748b] hover:text-[var(--accent)]">Warranty Terms</a>
+                    <a href="privacy.html" class="text-[#64748b] hover:text-[var(--accent)]">Privacy Policy</a>
+                    <a href="nsf.html" class="text-[#64748b] hover:text-[var(--accent)]">NSF Standards</a>
+                </div>
+            </div>
+
+            <div class="text-center pb-8">
+                <a href="#main-nav" class="inline-flex items-center gap-2 text-[#64748b] text-xs font-semibold uppercase tracking-widest hover:text-[var(--accent)]">
+                    <i class="fas fa-arrow-up"></i> Back to Top
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- SCRIPTS                                                      -->
+    <!-- ============================================================ -->
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 30) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Mobile Menu Drawer
+        const mobileBtn = document.getElementById('mobile-btn');
+        const fullscreenMenu = document.getElementById('fullscreen-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+
+        function toggleMenu() {
+            fullscreenMenu.classList.toggle('active');
+            drawerOverlay.classList.toggle('active');
+            document.body.style.overflow = fullscreenMenu.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function closeMenu() {
+            fullscreenMenu.classList.remove('active');
+            drawerOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (mobileBtn) mobileBtn.onclick = toggleMenu;
+        if (closeMenuBtn) closeMenuBtn.onclick = closeMenu;
+        if (drawerOverlay) drawerOverlay.onclick = closeMenu;
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1280) closeMenu();
+        });
+
+        // Theme Toggle (Dark / Light)
+        const themeDesk = document.getElementById('theme-toggle-desktop');
+        const themeMob = document.getElementById('theme-toggle-mobile');
+        const iconDesk = document.getElementById('theme-icon-desktop');
+        const iconMob = document.getElementById('theme-icon-mobile');
+
+        const savedTheme = localStorage.getItem('aquapure-theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDark = savedTheme ? savedTheme === 'dark' : systemDark;
+
+        function setTheme(dark) {
+            if (dark) {
+                document.body.classList.add('dark-mode');
+                if (iconDesk) iconDesk.className = 'fas fa-sun';
+                if (iconMob) iconMob.className = 'fas fa-sun';
+                localStorage.setItem('aquapure-theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                if (iconDesk) iconDesk.className = 'fas fa-moon';
+                if (iconMob) iconMob.className = 'fas fa-moon';
+                localStorage.setItem('aquapure-theme', 'light');
+            }
+        }
+        setTheme(isDark);
+
+        function toggleTheme() {
+            const currentlyDark = document.body.classList.contains('dark-mode');
+            setTheme(!currentlyDark);
+        }
+        if (themeDesk) themeDesk.addEventListener('click', toggleTheme);
+        if (themeMob) themeMob.addEventListener('click', toggleTheme);
+
+        // Direction Toggle (RTL / LTR)
+        const rtlBtn = document.getElementById('rtl-btn');
+        const rtlMob = document.getElementById('rtl-toggle-mobile');
+        const rtlTexts = document.querySelectorAll('.rtl-text');
+
+        function toggleRTL() {
+            const html = document.documentElement;
+            if (html.dir === 'rtl') {
+                html.dir = 'ltr';
+                rtlTexts.forEach(el => el.textContent = 'LTR');
+                if (rtlBtn) rtlBtn.innerHTML = 'LTR';
+            } else {
+                html.dir = 'rtl';
+                rtlTexts.forEach(el => el.textContent = 'RTL');
+                if (rtlBtn) rtlBtn.innerHTML = 'RTL';
+            }
+        }
+        if (rtlBtn) rtlBtn.addEventListener('click', toggleRTL);
+        if (rtlMob) rtlMob.addEventListener('click', toggleRTL);
+
+        // Mobile Dropdown Accordion
+        const homeToggle = document.getElementById('mobile-home-toggle');
+        const homeItems = document.getElementById('mobile-home-items');
+        if (homeToggle && homeItems) {
+            homeToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('open');
+                homeItems.classList.toggle('open');
+            });
+        }
+    </script>
+</body>
+</html>

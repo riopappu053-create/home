@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="AquaPure Systems - Client Portal Book Now & Registration">
+    <title>AquaPure · Client Portal &amp; Sign Up</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230284c7' rx='20'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial'%3E💧%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === TYPOGRAPHY STANDARDIZATION === */
+        h1, h2, h3, h4, h5, h6, .brand-logo {
+            font-weight: 700 !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        p {
+            font-weight: 400 !important;
+        }
+        b, strong, .font-bold {
+            font-weight: 600 !important;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* === AQUAPURE COLOR THEME (CYAN / DEEP MARINE BLUE) === */
+        :root, html[data-theme='dark'] {
+            --bg-primary: #07111e;
+            --bg-secondary: #0b192c;
+            --bg-card: #0f2238;
+            --bg-card-hover: #162c46;
+            --accent-color: #38bdf8;
+            --accent-dark: #0284c7;
+            --accent-light: #7dd3fc;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-light: rgba(56, 189, 248, 0.2);
+            --border-dim: rgba(255, 255, 255, 0.05);
+            --hover-bg: rgba(56, 189, 248, 0.12);
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --input-bg: rgba(7, 17, 30, 0.6);
+            --shadow-color: rgba(56, 189, 248, 0.15);
+            --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            --social-apple-color: #ffffff;
+        }
+
+        html[data-theme='light'] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #f0f7ff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f8fe;
+            --accent-color: #0284c7;
+            --accent-dark: #0369a1;
+            --accent-light: #38bdf8;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --border-light: rgba(2, 132, 199, 0.18);
+            --border-dim: rgba(0, 0, 0, 0.06);
+            --hover-bg: rgba(2, 132, 199, 0.08);
+            --input-bg: #f8fafc;
+            --shadow-color: rgba(2, 132, 199, 0.18);
+            --gradient-accent: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            --social-apple-color: #000000;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.35s ease, color 0.35s ease;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 16px;
+        }
+
+        /* === WATER WAVE BACKGROUND ANIMATIONS === */
+        .Book Now-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .Book Now-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 15% 45%, rgba(2, 132, 199, 0.15) 0%, transparent 65%),
+                radial-gradient(ellipse at 85% 55%, rgba(56, 189, 248, 0.12) 0%, transparent 60%);
+        }
+        .Book Now-bg .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 220px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230284c7' fill-opacity='0.12' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            background-size: 1440px 220px;
+            animation: waveMove 22s linear infinite;
+            opacity: 0.7;
+        }
+        .Book Now-bg .wave:nth-child(2) {
+            bottom: -25px;
+            opacity: 0.45;
+            animation-duration: 28s;
+            animation-delay: -6s;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2338bdf8' fill-opacity='0.15' d='M0,224L48,208C96,192,192,160,288,160C384,160,480,192,576,208C672,224,768,224,864,208C960,192,1056,160,1152,160C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+        }
+        .Book Now-bg .wave:nth-child(3) {
+            bottom: -45px;
+            opacity: 0.25;
+            animation-duration: 34s;
+            animation-delay: -12s;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230369a1' fill-opacity='0.20' d='M0,160L48,144C96,128,192,96,288,112C384,128,480,192,576,208C672,224,768,224,864,208C960,192,1056,160,1152,160C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+        @keyframes waveMove {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1440px; }
+        }
+
+        /* Floating Bubbles */
+        .bubbles {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .bubble {
+            position: absolute;
+            bottom: -80px;
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: bubbleFloat 16s ease-in infinite;
+        }
+        .bubble:nth-child(1) { width: 35px; height: 35px; left: 10%; animation-duration: 17s; background: var(--accent-color); }
+        .bubble:nth-child(2) { width: 55px; height: 55px; left: 28%; animation-duration: 21s; animation-delay: 2s; background: var(--accent-light); }
+        .bubble:nth-child(3) { width: 25px; height: 25px; left: 48%; animation-duration: 15s; animation-delay: 4s; background: var(--accent-dark); }
+        .bubble:nth-child(4) { width: 70px; height: 70px; left: 68%; animation-duration: 24s; animation-delay: 1s; background: var(--accent-color); }
+        .bubble:nth-child(5) { width: 45px; height: 45px; left: 88%; animation-duration: 19s; animation-delay: 3s; background: var(--accent-light); }
+
+        @keyframes bubbleFloat {
+            0% { transform: translateY(0) scale(1); opacity: 0.1; }
+            50% { opacity: 0.25; }
+            100% { transform: translateY(-110vh) scale(1.4); opacity: 0; }
+        }
+
+        /* === CONTAINER & CARD === */
+        .auth-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 480px;
+            padding: 0;
+            max-height: 100vh;
+            max-height: 100dvh;
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 1.5rem;
+            padding: 2.2rem 2rem;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.35), 0 0 35px var(--shadow-color);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-height: calc(100vh - 32px);
+            max-height: calc(100dvh - 32px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+        .auth-card::-webkit-scrollbar {
+            width: 4px;
+        }
+        .auth-card::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        /* === BRAND LOGO === */
+        .auth-header {
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+        .auth-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            margin-bottom: 0.6rem;
+        }
+        .auth-logo .brand-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(2, 132, 199, 0.35);
+            background: rgba(2, 132, 199, 0.12);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .auth-logo .brand-icon-wrapper i {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+        }
+        .auth-logo .brand-icon-wrapper:hover {
+            transform: scale(1.06);
+            background: rgba(2, 132, 199, 0.22);
+        }
+        .auth-logo .brand-logo {
+            font-size: 1.6rem;
+            font-weight: 800 !important;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+        .auth-logo .brand-logo span {
+            color: var(--accent-color);
+        }
+
+        .auth-header h1 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.15rem;
+        }
+        .auth-header p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* === DUAL TAB SLIDER SWITCH === */
+        .auth-switcher {
+            display: flex;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 50px;
+            padding: 4px;
+            position: relative;
+            margin-bottom: 1.3rem;
+        }
+        .auth-switcher-pill {
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            width: calc(50% - 4px);
+            border-radius: 40px;
+            background: var(--gradient-accent);
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+            transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+        }
+        [dir="ltr"] .auth-switcher-pill.signup-active {
+            transform: translateX(100%);
+        }
+        [dir="rtl"] .auth-switcher-pill.signup-active {
+            transform: translateX(-100%);
+        }
+        .auth-tab-btn {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+            padding: 8px 0;
+            border: none;
+            background: transparent;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .auth-tab-btn.active {
+            color: #ffffff !important;
+        }
+
+        /* === FORM CONTROLS === */
+        .form-pane {
+            display: none;
+            animation: paneFadeIn 0.3s ease;
+        }
+        .form-pane.active {
+            display: block;
+        }
+        @keyframes paneFadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 0.85rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+        .form-group .input-wrapper {
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+        .form-group .input-wrapper > i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .form-group .input-wrapper input {
+            display: block;
+            width: 100%;
+            padding: 0.72rem 2.9rem 0.72rem 2.8rem;
+            background: var(--input-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 0.8rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .form-group .input-wrapper input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+        }
+        .form-group .input-wrapper input:focus + i {
+            color: var(--accent-color);
+        }
+        .form-group .input-wrapper input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+        .form-group .input-wrapper .toggle-password {
+            position: absolute;
+            right: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+            font-size: 0.95rem;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+        }
+        .form-group .input-wrapper .toggle-password:hover {
+            color: var(--accent-color);
+        }
+
+        /* Password Strength Meter */
+        .password-strength {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.35rem;
+        }
+        .password-strength .bar {
+            flex: 1;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--border-dim);
+            transition: background 0.3s;
+        }
+        .password-strength .bar.weak { background: var(--danger); }
+        .password-strength .bar.medium { background: var(--warning); }
+        .password-strength .bar.strong { background: var(--success); }
+        .password-strength .text {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-left: 0.4rem;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.8rem 0 1rem;
+            font-size: 0.8rem;
+        }
+        .form-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+        .form-options label input[type="checkbox"] {
+            accent-color: var(--accent-color);
+            width: 0.95rem;
+            height: 0.95rem;
+            cursor: pointer;
+        }
+        .form-options a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .form-options a:hover {
+            color: var(--accent-light);
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .btn-action {
+            width: 100%;
+            padding: 0.78rem;
+            background: var(--gradient-accent);
+            color: #ffffff;
+            border: none;
+            border-radius: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+        }
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(2, 132, 199, 0.45);
+        }
+        .btn-action:active {
+            transform: translateY(0);
+        }
+        .btn-action.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        .btn-action .spinner {
+            display: none;
+            width: 1.1rem;
+            height: 1.1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        .btn-action.loading .spinner {
+            display: block;
+        }
+        .btn-action.loading .btn-text,
+        .btn-action.loading .btn-icon {
+            display: none;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Divider */
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .auth-divider::before,
+        .auth-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-light);
+        }
+
+        /* === SOCIAL BUTTONS & ORIGINAL SVG ICONS === */
+        .social-auth {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .social-auth button {
+            flex: 1;
+            padding: 0.65rem;
+            border: 1px solid var(--border-light);
+            border-radius: 0.8rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+        .social-auth button:hover {
+            border-color: var(--accent-color);
+            background: var(--hover-bg);
+            transform: translateY(-1px);
+        }
+        .social-auth button span {
+            line-height: 1;
+            font-weight: 600;
+        }
+
+        /* Dedicated Official SVG Styles */
+        .google-icon-svg {
+            width: 18px;
+            height: 18px;
+            display: block;
+            flex-shrink: 0;
+        }
+        .apple-icon-svg {
+            width: 19px;
+            height: 19px;
+            display: block;
+            flex-shrink: 0;
+            fill: var(--social-apple-color);
+            transition: fill 0.3s ease;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+        }
+        .auth-footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .auth-footer a:hover {
+            color: var(--accent-light);
+            text-decoration: underline;
+        }
+
+        /* Alerts */
+        .alert {
+            padding: 0.6rem 0.9rem;
+            border-radius: 0.8rem;
+            font-size: 0.82rem;
+            margin-bottom: 0.8rem;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            animation: alertFade 0.3s ease;
+        }
+        @keyframes alertFade {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .alert.show { display: flex; }
+        .alert-error {
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: var(--danger);
+        }
+        .alert-success {
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            color: var(--success);
+        }
+
+        /* Top Corner Controls */
+        .theme-corner {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 10;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .theme-corner button {
+            width: 2.3rem;
+            height: 2.3rem;
+            border-radius: 50%;
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            backdrop-filter: blur(8px);
+        }
+        .theme-corner button:hover {
+            background: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        /* RTL Alignment */
+        [dir="rtl"] .form-group .input-wrapper > i {
+            left: auto;
+            right: 1rem;
+        }
+        [dir="rtl"] .form-group .input-wrapper input {
+            padding: 0.72rem 2.8rem 0.72rem 2.9rem;
+        }
+        [dir="rtl"] .form-group .input-wrapper .toggle-password {
+            right: auto;
+            left: 0.9rem;
+        }
+        [dir="rtl"] .theme-corner {
+            right: auto;
+            left: 1.25rem;
+        }
+        [dir="rtl"] .btn-action .btn-icon {
+            transform: scaleX(-1);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .auth-card {
+                padding: 1.5rem 1.1rem;
+                border-radius: 1.2rem;
+            }
+            .auth-logo .brand-icon-wrapper { width: 34px; height: 34px; }
+            .auth-logo .brand-icon-wrapper i { font-size: 1rem; }
+            .auth-logo .brand-logo { font-size: 1.3rem !important; }
+            .auth-header h1 { font-size: 1.15rem; }
+            .social-auth { flex-direction: column; gap: 0.5rem; }
+            .theme-corner { top: 0.6rem; right: 0.6rem; }
+            [dir="rtl"] .theme-corner { left: 0.6rem; right: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Water Waves Background -->
+    <div class="Book Now-bg">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Floating Bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Theme & RTL Controls -->
+    <div class="theme-corner">
+        <button id="themeToggle" title="Toggle Theme" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button id="rtlToggle" title="Toggle RTL/LTR" aria-label="Toggle text direction">
+            <span class="rtl-text" style="font-size: 0.72rem; font-weight: 700; font-family: 'Oswald', sans-serif;">LTR</span>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="auth-container">
+        <div class="auth-card">
+
+            <!-- Header with AquaPure Brand Logo -->
+            <div class="auth-header">
+                <a href="index.html" class="auth-logo">
+                    <div class="brand-icon-wrapper">
+                        <i class="fas fa-droplet"></i>
+                    </div>
+                    <div class="brand-logo"><span>Aqua</span>Pure</div>
+                </a>
+                <h1 id="pageHeading">Welcome Back</h1>
+                <p id="pageSubheading">Sign in to monitor your water softening systems</p>
+            </div>
+
+            <!-- Single Page Segment Switcher -->
+            <div class="auth-switcher">
+                <div class="auth-switcher-pill" id="switcherPill"></div>
+                <button type="button" class="auth-tab-btn active" id="Book NowTabBtn" onclick="switchAuthMode('Book Now')">
+                    <i class="fas fa-lock"></i> Sign In
+                </button>
+                <button type="button" class="auth-tab-btn" id="signupTabBtn" onclick="switchAuthMode('signup')">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+
+            <!-- Alert Box -->
+            <div id="alertBox" class="alert">
+                <i class="fas fa-circle-info" id="alertIcon"></i>
+                <span id="alertMsg"></span>
+            </div>
+
+            <!-- ================= Book Now FORM ================= -->
+            <form id="Book NowForm" class="form-pane active" novalidate>
+                <div class="form-group">
+                    <label for="Book NowEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="Book NowEmail" placeholder="name@aquapuresoftener.com" required autocomplete="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Book NowPassword">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="Book NowPassword" placeholder="Enter your password" required autocomplete="current-password">
+                        <button type="button" class="toggle-password" onclick="togglePass('Book NowPassword', this)" aria-label="Toggle password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox" id="rememberMe" checked>
+                        Remember me
+                    </label>
+                    <a href="javascript:void(0)" onclick="triggerForgotPass()">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-action" id="Book NowSubmitBtn">
+                    <span class="btn-text">Sign In</span>
+                    <span class="spinner"></span>
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                </button>
+            </form>
+
+            <!-- ================= SIGN UP FORM ================= -->
+            <form id="signupForm" class="form-pane" novalidate>
+                <div class="form-group">
+                    <label for="signupFullName">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signupFullName" placeholder="e.g. Alex Morgan" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signupEmail" placeholder="alex@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPassword" placeholder="Minimum 6 characters" required minlength="6">
+                        <button type="button" class="toggle-password" onclick="togglePass('signupPassword', this)" aria-label="Toggle password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="bar" id="strBar1"></div>
+                        <div class="bar" id="strBar2"></div>
+                        <div class="bar" id="strBar3"></div>
+                        <div class="text" id="strText">Password strength</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupConfirm">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-check-circle"></i>
+                        <input type="password" id="signupConfirm" placeholder="Re-enter password" required>
+                        <button type="button" class="toggle-password" onclick="togglePass('signupConfirm', this)" aria-label="Toggle password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox" id="termsCheck" required>
+                        <span>I accept the <a href="javascript:void(0)">Warranty &amp; Service Terms</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-action" id="signupSubmitBtn">
+                    <span class="btn-text">Create Free Account</span>
+                    <span class="spinner"></span>
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                </button>
+            </form>
+
+            <!-- Official Google & Apple Social Authentication -->
+            <div class="auth-divider">or continue with</div>
+            <div class="social-auth">
+                <!-- 100% Authentic Google 4-Color Vector Logo -->
+                <button type="button" class="google">
+                    <svg class="google-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                    <span>Google</span>
+                </button>
+
+                <!-- 100% Authentic Apple Monochromatic Vector Logo (Standard 24x24 Bitten Apple) -->
+                <button type="button" class="apple">
+                    <svg class="apple-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.62 1.35-.57.66-.99 1.72-.85 2.74 1.01.08 2.04-.54 2.55-1.24z"/>
+                    </svg>
+                    <span>Apple</span>
+                </button>
+            </div>
+
+            <!-- Footer Switch Notice -->
+            <div class="auth-footer" id="authFooter">
+                Don't have an account? <a onclick="switchAuthMode('signup')">Sign Up Here</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- === JAVASCRIPT === -->
+    <script>
+        (function() {
+            const html = document.documentElement;
+            const themeToggle = document.getElementById('themeToggle');
+            const rtlToggle = document.getElementById('rtlToggle');
+
+            const Book NowTabBtn = document.getElementById('Book NowTabBtn');
+            const signupTabBtn = document.getElementById('signupTabBtn');
+            const switcherPill = document.getElementById('switcherPill');
+            const Book NowForm = document.getElementById('Book NowForm');
+            const signupForm = document.getElementById('signupForm');
+            const pageHeading = document.getElementById('pageHeading');
+            const pageSubheading = document.getElementById('pageSubheading');
+            const authFooter = document.getElementById('authFooter');
+
+            const alertBox = document.getElementById('alertBox');
+            const alertMsg = document.getElementById('alertMsg');
+            const alertIcon = document.getElementById('alertIcon');
+
+            // === 1. TAB SWITCHING (Book Now <-> SIGNUP) ===
+            window.switchAuthMode = function(mode) {
+                hideAlert();
+                if (mode === 'signup') {
+                    Book NowTabBtn.classList.remove('active');
+                    signupTabBtn.classList.add('active');
+                    Book NowForm.classList.remove('active');
+                    signupForm.classList.add('active');
+                    switcherPill.classList.add('signup-active');
+
+                    pageHeading.textContent = "Create Account";
+                    pageSubheading.textContent = "Join AquaPure to book water testing & view reports";
+                    authFooter.innerHTML = 'Already have an account? <a onclick="switchAuthMode(\'Book Now\')">Sign In</a>';
+                } else {
+                    signupTabBtn.classList.remove('active');
+                    Book NowTabBtn.classList.add('active');
+                    signupForm.classList.remove('active');
+                    Book NowForm.classList.add('active');
+                    switcherPill.classList.remove('signup-active');
+
+                    pageHeading.textContent = "Welcome Back";
+                    pageSubheading.textContent = "Sign in to monitor your water softening systems";
+                    authFooter.innerHTML = 'Don\'t have an account? <a onclick="switchAuthMode(\'signup\')">Sign Up Here</a>';
+                }
+            };
+
+            // === 2. THEME PERSISTENCE WITH AQUAPURE ===
+            let savedTheme = localStorage.getItem('aquapure-theme') || localStorage.getItem('theme') || 'dark';
+            html.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'dark') document.body.classList.add('dark-mode');
+
+            function updateThemeIcon(th) {
+                if (themeToggle) {
+                    themeToggle.innerHTML = th === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+                }
+            }
+            updateThemeIcon(savedTheme);
+
+            themeToggle.addEventListener('click', () => {
+                let current = html.getAttribute('data-theme');
+                let next = current === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                if (next === 'dark') document.body.classList.add('dark-mode');
+                else document.body.classList.remove('dark-mode');
+
+                localStorage.setItem('aquapure-theme', next);
+                localStorage.setItem('theme', next);
+                updateThemeIcon(next);
+            });
+
+            // === 3. DIRECTION TOGGLE (LTR / RTL) ===
+            let savedDir = localStorage.getItem('direction') || 'ltr';
+            html.setAttribute('dir', savedDir);
+            const rtlText = rtlToggle.querySelector('.rtl-text');
+            if (rtlText) rtlText.textContent = savedDir === 'rtl' ? 'RTL' : 'LTR';
+
+            rtlToggle.addEventListener('click', () => {
+                let curDir = html.getAttribute('dir');
+                let nextDir = curDir === 'rtl' ? 'ltr' : 'rtl';
+                html.setAttribute('dir', nextDir);
+                localStorage.setItem('direction', nextDir);
+                if (rtlText) rtlText.textContent = nextDir === 'rtl' ? 'RTL' : 'LTR';
+            });
+
+            // === 4. PASSWORD VISIBILITY TOGGLE ===
+            window.togglePass = function(fieldId, btn) {
+                const input = document.getElementById(fieldId);
+                const icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.className = 'fas fa-eye-slash';
+                } else {
+                    input.type = 'password';
+                    icon.className = 'fas fa-eye';
+                }
+            };
+
+            // === 5. ALERTS ===
+            function showAlert(msg, isError = true) {
+                alertBox.className = 'alert show ' + (isError ? 'alert-error' : 'alert-success');
+                alertIcon.className = isError ? 'fas fa-exclamation-circle' : 'fas fa-check-circle';
+                alertMsg.textContent = msg;
+            }
+            function hideAlert() {
+                alertBox.className = 'alert';
+            }
+
+            window.triggerForgotPass = function() {
+                const email = document.getElementById('Book NowEmail').value.trim();
+                if (!email) {
+                    showAlert('Please enter your email above to receive a reset link.');
+                } else {
+                    showAlert('Password recovery link has been dispatched to: ' + email, false);
+                }
+            };
+
+            // === 6. PASSWORD STRENGTH CALCULATION ===
+            const signupPass = document.getElementById('signupPassword');
+            const strBar1 = document.getElementById('strBar1');
+            const strBar2 = document.getElementById('strBar2');
+            const strBar3 = document.getElementById('strBar3');
+            const strText = document.getElementById('strText');
+
+            signupPass.addEventListener('input', function() {
+                const val = this.value;
+                let score = 0;
+                if (val.length >= 6) score++;
+                if (val.length >= 9) score++;
+                if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score++;
+
+                strBar1.className = 'bar';
+                strBar2.className = 'bar';
+                strBar3.className = 'bar';
+
+                if (score === 1) {
+                    strBar1.className = 'bar weak';
+                    strText.textContent = 'Weak';
+                } else if (score === 2) {
+                    strBar1.className = 'bar medium';
+                    strBar2.className = 'bar medium';
+                    strText.textContent = 'Medium';
+                } else if (score === 3) {
+                    strBar1.className = 'bar strong';
+                    strBar2.className = 'bar strong';
+                    strBar3.className = 'bar strong';
+                    strText.textContent = 'Strong';
+                } else {
+                    strText.textContent = 'Password strength';
+                }
+            });
+
+            // === 7. FORM SUBMISSIONS ===
+            // Book Now
+            Book NowForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                hideAlert();
+                const email = document.getElementById('Book NowEmail').value.trim();
+                const pass = document.getElementById('Book NowPassword').value.trim();
+
+                if (!email || !pass) {
+                    showAlert('Please complete all Book Now fields.');
+                    return;
+                }
+
+                const btn = document.getElementById('Book NowSubmitBtn');
+                btn.classList.add('loading');
+
+                setTimeout(() => {
+                    showAlert('Authentication successful! Welcome to AquaPure.', false);
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1200);
+                }, 1000);
+            });
+
+            // Sign Up
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                hideAlert();
+                const name = document.getElementById('signupFullName').value.trim();
+                const email = document.getElementById('signupEmail').value.trim();
+                const pass = document.getElementById('signupPassword').value;
+                const confirm = document.getElementById('signupConfirm').value;
+                const terms = document.getElementById('termsCheck').checked;
+
+                if (!name || !email || !pass || !confirm) {
+                    showAlert('Please fill out all registration fields.');
+                    return;
+                }
+                if (pass.length < 6) {
+                    showAlert('Password must contain at least 6 characters.');
+                    return;
+                }
+                if (pass !== confirm) {
+                    showAlert('Passwords do not match. Please verify.');
+                    return;
+                }
+                if (!terms) {
+                    showAlert('Please accept the Terms to continue.');
+                    return;
+                }
+
+                const btn = document.getElementById('signupSubmitBtn');
+                btn.classList.add('loading');
+
+                setTimeout(() => {
+                    showAlert('AquaPure Account created successfully! Logging you in...', false);
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1300);
+                }, 1100);
+            });
+
+            // Check URL param for initial state (e.g., Book Now.html?action=signup)
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('action') === 'signup') {
+                switchAuthMode('signup');
+            }
+        })();
+    </script>
+</body>
+</html>

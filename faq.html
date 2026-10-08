@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaPure Systems · Home Water Softener & Filtration Installer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230284c7' rx='20'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial'%3E💧%3C/text%3E%3C/svg%3E" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        navy: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#070d18',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+            padding-top: 74px;
+        }
+
+        /* ===== ATTRACTIVE OCEAN & PURE WATER BLUE PALETTE ===== */
+        :root {
+            color-scheme: light;
+            --bg-color: #f8fafc;          /* Crisp Ice Slate */
+            --bg-secondary: #f0f7ff;      /* Fresh Aqua Tint */
+            --bg-card: #ffffff;
+            --bg-inverted: #07111e;
+            --text-main: #0f172a;         /* Deep Navy Slate */
+            --text-muted: #475569;        /* Balanced Slate */
+            --text-dim: #94a3b8;
+            --accent: #0284c7;            /* Hydro Sky/Cyan Blue */
+            --accent-dark: #0369a1;       /* Deep Marine */
+            --accent-light: #e0f2fe;      /* Water Mist */
+            --accent-pale: #f0f9ff;
+            --border-color: #cbd5e1;
+            --border-light: rgba(2, 132, 199, 0.22);
+            --nav-bg: rgba(248, 250, 252, 0.94);
+            --drawer-bg: rgba(255, 255, 255, 0.98);
+            --menu-hover-bg: rgba(2, 132, 199, 0.10);
+            --shadow-color: rgba(2, 132, 199, 0.16);
+            --gradient-accent: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+        }
+
+        body.dark-mode {
+            color-scheme: dark;
+            --bg-color: #07111e;          /* Deep Midnight Oceanic */
+            --bg-secondary: #0b192c;      /* Abyssal Blue */
+            --bg-card: #0f2238;
+            --bg-inverted: #f0f9ff;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent: #38bdf8;            /* Bright Vibrant Water Cyan */
+            --accent-dark: #0284c7;
+            --accent-light: #162c46;
+            --accent-pale: #0b192c;
+            --border-color: #1e3a5f;
+            --border-light: rgba(56, 189, 248, 0.22);
+            --nav-bg: rgba(7, 17, 30, 0.94);
+            --drawer-bg: rgba(7, 17, 30, 0.98);
+            --menu-hover-bg: rgba(56, 189, 248, 0.12);
+            --shadow-color: rgba(56, 189, 248, 0.08);
+            --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, .brand-logo, .font-display {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        p {
+            line-height: 1.7;
+        }
+
+        /* ===== PILL NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--nav-bg);
+            padding: 0 28px;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            border-bottom: 1px solid transparent;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .navbar.scrolled {
+            height: 64px;
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: 0 4px 30px var(--shadow-color);
+        }
+
+        .nav-pills {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-secondary);
+            padding: 4px;
+            border-radius: 60px;
+            border: 1px solid var(--border-light);
+        }
+
+        .nav-pill {
+            padding: 8px 18px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-radius: 40px;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+
+        .nav-pill:hover {
+            color: var(--text-main);
+            background: rgba(2, 132, 199, 0.08);
+        }
+
+        .nav-pill.active {
+            background: var(--gradient-accent);
+            color: #ffffff !important;
+            box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
+        }
+
+        .dropdown-pill {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-pill .nav-pill {
+            padding-right: 14px;
+        }
+        .dropdown-pill .nav-pill .fa-chevron-down {
+            font-size: 8px;
+            margin-left: 2px;
+            opacity: 0.6;
+            transition: transform 0.25s ease;
+        }
+        .dropdown-pill:hover .nav-pill .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        .dropdown-pill-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 210px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 6px 4px;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(6px) scale(0.96);
+            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: 100;
+        }
+        .dropdown-pill:hover .dropdown-pill-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .dropdown-pill-item {
+            display: block;
+            padding: 10px 18px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        .dropdown-pill-item:hover {
+            background: var(--menu-hover-bg);
+            color: var(--accent);
+            padding-left: 24px;
+        }
+        .dropdown-pill-item.active {
+            color: var(--accent);
+            background: rgba(2, 132, 199, 0.08);
+        }
+        [dir="rtl"] .dropdown-pill-item:hover {
+            padding-left: 18px;
+            padding-right: 24px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 40px;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+        }
+        .btn-solid {
+            background: var(--gradient-accent);
+            color: #ffffff !important;
+            border: none;
+        }
+        .btn-solid:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 26px rgba(2, 132, 199, 0.38);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent) !important;
+            background: var(--menu-hover-bg);
+        }
+
+        /* ===== TOGGLES ===== */
+        .theme-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+        .theme-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            transform: rotate(20deg);
+        }
+        .rtl-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 40px;
+            padding: 6px 14px;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        .rtl-toggle:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* ===== BRAND LOGO ===== */
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .brand-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(2, 132, 199, 0.35);
+            background: rgba(2, 132, 199, 0.10);
+            transition: all 0.3s ease;
+        }
+        .brand-icon-wrapper i {
+            color: var(--accent);
+            font-size: 1.15rem;
+        }
+        .brand-logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+        .brand-logo span {
+            color: var(--accent);
+        }
+
+        /* ===== MOBILE DRAWER ===== */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(7, 17, 30, 0.65);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s ease;
+            backdrop-filter: blur(4px);
+        }
+        .drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .fullscreen-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 380px;
+            height: 100dvh;
+            background: var(--drawer-bg);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100%);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 1px solid var(--border-light);
+        }
+        [dir="rtl"] .fullscreen-menu {
+            right: auto;
+            left: 0;
+            transform: translateX(-100%);
+            border-left: none;
+            border-right: 1px solid var(--border-light);
+        }
+        .fullscreen-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+        .mobile-link {
+            display: block;
+            width: 100%;
+            padding: 16px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.25s;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .mobile-link:hover {
+            color: var(--accent);
+            padding-left: 36px;
+            background: var(--menu-hover-bg);
+        }
+        [dir="rtl"] .mobile-link:hover {
+            padding-left: 28px;
+            padding-right: 36px;
+        }
+        .mobile-menu-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-size: 1.4rem;
+            border-radius: 50%;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+        .mobile-dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 28px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-main);
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .mobile-dropdown-header i {
+            transition: transform 0.3s ease;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+        .mobile-dropdown-header.open i {
+            transform: rotate(180deg);
+        }
+        .mobile-dropdown-items {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            background: var(--bg-secondary);
+        }
+        .mobile-dropdown-items.open {
+            max-height: 200px;
+            padding: 6px 0 10px 16px;
+        }
+        .mobile-dropdown-link {
+            border-bottom: none !important;
+            padding: 10px 28px !important;
+            font-size: 0.9rem !important;
+            color: var(--text-muted) !important;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #07111e !important;
+            border-top: 1px solid rgba(2, 132, 199, 0.25) !important;
+            padding-top: 60px;
+            color: #f1f5f9 !important;
+        }
+        footer h4 {
+            color: #f8fafc !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+        }
+        footer a, footer li, footer span:not(.brand-logo span) {
+            color: #94a3b8 !important;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        footer a:hover {
+            color: var(--accent) !important;
+        }
+        footer .social-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(2, 132, 199, 0.25) !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: #94a3b8 !important;
+            background: transparent;
+        }
+        footer .social-circle:hover {
+            background: var(--gradient-accent) !important;
+            border-color: var(--accent) !important;
+            color: #ffffff !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+        }
+
+        .theme-btn, .rtl-toggle { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; }
+        .theme-btn { width: 38px; padding: 0; }
+        .rtl-toggle { padding: 0 16px; }
+        .navbar .btn { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- PILL NAVBAR (WITH Book Now PAGE IN NAVBAR)                      -->
+    <!-- ============================================================ -->
+    <nav class="navbar" id="main-nav">
+        <div class="w-full flex items-center justify-between max-w-[1440px] mx-auto">
+            <!-- Brand -->
+            <a href="index.html" class="brand-link">
+                <div class="brand-icon-wrapper">
+                    <i class="fas fa-droplet"></i>
+                </div>
+                <div class="brand-logo">
+                    <span>Aqua</span>Pure
+                </div>
+            </a>
+
+            <!-- Desktop Pill Navigation -->
+            <div class="hidden xl:flex items-center justify-center flex-1 px-4">
+                <div class="nav-pills">
+                    <div class="dropdown-pill">
+                        <a href="index.html" class="nav-pill" id="home-pill-btn">
+                            Home <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-pill-menu">
+                            <a href="index.html" class="dropdown-pill-item">home</a>
+                            <a href="home-2.html" class="dropdown-pill-item">home-2</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="nav-pill">About</a>
+                    <a href="solutions.html" class="nav-pill">Solutions</a>
+                    <a href="products.html" class="nav-pill">Products</a>
+                    <a href="pricing.html" class="nav-pill">Pricing</a>
+                    <a href="water-testing.html" class="nav-pill">Water Testing</a>
+                    <a href="faq.html" class="nav-pill active">faq</a>
+                    <a href="contact.html" class="nav-pill">Contact</a>
+                </div>
+            </div>
+
+            <!-- Desktop Actions -->
+            <div class="hidden xl:flex items-center gap-3">
+               <a href="#" class="btn btn-outline !px-5 !text-[10px]">
+                    <i class="fas fa-sign-in-alt text-xs mr-1 text-[var(--accent)]"></i> Book Now
+                </a>
+               
+                <div class="w-px h-5 bg-[var(--border-light)] mx-1"></div>
+                <button id="theme-toggle-desktop" class="theme-btn" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon-desktop"></i>
+                </button>
+                <button id="rtl-btn" class="rtl-toggle" title="Toggle LTR/RTL">LTR</button>
+            </div>
+
+            <!-- Mobile Trigger -->
+            <div class="xl:hidden flex items-center justify-end gap-2">
+                <button id="mobile-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- MOBILE DRAWER                                                -->
+    <!-- ============================================================ -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="fullscreen-menu" id="fullscreen-menu">
+        <div class="w-full px-5 py-5 flex justify-between items-center shrink-0 border-b border-[var(--border-light)]">
+            <a href="index.html" class="brand-link" onclick="closeMenu()">
+                <div class="brand-icon-wrapper">
+                    <i class="fas fa-droplet"></i>
+                </div>
+                <div class="brand-logo">
+                    <span>Aqua</span>Pure
+                </div>
+            </a>
+            <button id="close-menu" class="w-10 h-10 flex items-center justify-center text-2xl text-[var(--text-main)] hover:text-[var(--accent)] transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col w-full overflow-y-auto flex-1 py-3">
+            <div class="mobile-dropdown">
+                <div class="mobile-dropdown-header" id="mobile-home-toggle">
+                    <span>Home</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-dropdown-items" id="mobile-home-items">
+                    <a href="index.html" class="mobile-link mobile-dropdown-link" onclick="closeMenu()">Home</a>
+                    <a href="home-2.html" class="mobile-link mobile-dropdown-link" onclick="closeMenu()">Home-2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-link" onclick="closeMenu()">About</a>
+            <a href="solutions.html" class="mobile-link" onclick="closeMenu()">Solutions</a>
+            <a href="products.html" class="mobile-link" onclick="closeMenu()">Products</a>
+            <a href="pricing.html" class="mobile-link" onclick="closeMenu()">Pricing</a>
+            <a href="water-testing.html" class="mobile-link" onclick="closeMenu()">Water Testing</a>
+            <a href="faq.html" class="mobile-link active" onclick="closeMenu()">FAQ</a>
+            <a href="contact.html" class="mobile-link" onclick="closeMenu()">Contact</a>
+        </div>
+
+        <div class="w-full px-5 py-5 border-t border-[var(--border-light)] flex flex-col gap-4 shrink-0 bg-[var(--bg-secondary)]">
+            <div class="grid grid-cols-2 gap-3 w-full">
+                <a href="Book Now.html" class="btn btn-outline w-full !py-3 text-center" onclick="closeMenu()">
+                    <i class="fas fa-sign-in-alt mr-2"></i> Book Now
+                </a>
+            </div>
+            <div class="flex justify-between items-center w-full">
+                <div class="flex items-center gap-3">
+                    <span class="text-[var(--text-dim)] font-medium text-[10px] uppercase tracking-widest">Theme</span>
+                    <button id="theme-toggle-mobile" class="theme-btn" aria-label="Toggle theme">
+                        <i class="fas fa-moon" id="theme-icon-mobile"></i>
+                    </button>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-[var(--text-dim)] font-medium text-[10px] uppercase tracking-widest">Dir</span>
+                    <button id="rtl-toggle-mobile" class="rtl-toggle" title="Toggle RTL/LTR">
+                        <span class="rtl-text">LTR</span>
+                        <i class="fas fa-arrow-right-arrow-left"></i>
+                    </button>
+                </div>
+            </div>
+            <a href="contact.html" class="btn btn-solid w-full !py-2.5 text-center" onclick="closeMenu()">
+                <i class="fas fa-vial mr-2"></i> Book Free Water Test
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- FULL-VIEWPORT HERO IMAGE SECTION (FAQ)                       -->
+    <!-- ============================================================ -->
+    <section class="relative min-h-[calc(100vh-74px)] flex items-center justify-center overflow-hidden">
+        <!-- Background Full-Viewport Image -->
+        <img 
+            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2400&q=85" 
+            alt="Water treatment knowledge base and frequently asked questions" 
+            class="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        <!-- Deep Oceanic Shading & Backdrop Gradients -->
+        <div class="absolute inset-0 bg-[#07111e]/80 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#07111e] via-[#07111e]/40 to-[#07111e]/70"></div>
+        <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at center, rgba(2, 132, 199, 0.28) 0%, transparent 68%);"></div>
+
+        <!-- Hero Content Overlay -->
+        <div class="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 text-center flex flex-col items-center py-20">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#38bdf8] mb-6">
+                <i class="fas fa-circle-question text-xs"></i>
+                <span class="text-[11px] font-semibold tracking-widest uppercase">Expert Guidance &amp; Knowledge Base</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.12] font-display max-w-4xl mb-6">
+                Answers to Your <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] via-[#7dd3fc] to-white">
+                    Water Treatment Questions.
+                </span>
+            </h1>
+
+            <p class="text-base sm:text-xl text-slate-200 max-w-3xl font-normal leading-relaxed mb-10 text-center">
+                Everything you need to know about hard water diagnosis, whole-home softener sizing, multi-stage filtration mechanics, plumbing compliance, and long-term maintenance.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto">
+                <a href="#faq-accordion" class="btn btn-solid !py-4 !px-8 text-xs tracking-wider shadow-2xl">
+                    <i class="fas fa-magnifying-glass text-xs mr-1"></i>
+                    <span>Browse Common Questions</span>
+                </a>
+                <a href="contact.html" class="btn btn-outline !text-white !border-white/30 hover:!border-[#38bdf8] !py-4 !px-8 text-xs tracking-wider bg-white/5 backdrop-blur-sm">
+                    <i class="fas fa-headset text-xs mr-1 text-[#38bdf8]"></i>
+                    <span>Speak with a Water Specialist</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- ================================================================= -->
+<!-- SECTION 1: SYSTEM SIZING & HARDNESS GRAINS ESTIMATOR             -->
+<!-- ================================================================= -->
+<section id="system-calculator" class="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-light)] transition-colors">
+  <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Interactive Engineering Tool</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] font-display leading-[1.15]">
+          Precision Sizing for Your Household GPM &amp; GPG.
+        </h2>
+        <p class="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
+          Undersized softeners recharge excessively and wear out resin beds prematurely. Oversized systems risk resin fouling and brine channeling. Dial in your numbers to calculate recommended grain capacity.
+        </p>
+
+        <div class="space-y-4 pt-2">
+          <!-- Household Size Slider -->
+          <div class="p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-light)]">
+            <div class="flex justify-between items-center mb-2">
+              <label for="calc-residents" class="text-xs font-bold text-[var(--text-main)] uppercase tracking-wider">Household Occupants</label>
+              <span id="residents-val" class="text-sm font-black text-[var(--accent)] font-mono">4 People</span>
+            </div>
+            <input type="range" id="calc-residents" min="1" max="8" value="4" class="w-full accent-[var(--accent)] cursor-pointer" />
+          </div>
+
+          <!-- Hardness Slider (GPG) -->
+          <div class="p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-light)]">
+            <div class="flex justify-between items-center mb-2">
+              <label for="calc-gpg" class="text-xs font-bold text-[var(--text-main)] uppercase tracking-wider">Water Hardness Level</label>
+              <span id="gpg-val" class="text-sm font-black text-[var(--accent)] font-mono">15 GPG (Very Hard)</span>
+            </div>
+            <input type="range" id="calc-gpg" min="3" max="35" value="15" class="w-full accent-[var(--accent)] cursor-pointer" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Calculation Card -->
+      <div class="lg:col-span-6">
+        <div class="p-8 sm:p-10 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-2xl space-y-8 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-[var(--accent)]/5 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div class="border-b border-[var(--border-light)] pb-6">
+            <span class="text-xs font-mono uppercase tracking-widest text-[var(--text-muted)]">Recommended Configuration</span>
+            <div id="recommended-capacity" class="text-4xl sm:text-5xl font-black text-[var(--accent)] font-display mt-1">48,000 Grains</div>
+            <p class="text-xs text-[var(--text-muted)] mt-2">Engineered to regenerate once every 7 days at peak 75 gal/person/day usage.</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)]">
+              <span class="text-[11px] font-mono uppercase text-[var(--text-muted)]">Tank Diameter</span>
+              <div id="tank-spec" class="text-lg font-bold text-[var(--text-main)] mt-0.5">10" × 54" Structural</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)]">
+              <span class="text-[11px] font-mono uppercase text-[var(--text-muted)]">Est. Salt Refill</span>
+              <div id="salt-spec" class="text-lg font-bold text-[var(--text-main)] mt-0.5">1 Bag / 7 Weeks</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[var(--accent-light)] border border-[var(--accent)]/20 flex items-center gap-3">
+            <i class="fas fa-circle-check text-[var(--accent)] text-lg shrink-0"></i>
+            <p class="text-xs text-[var(--text-main)] font-medium">Guaranteed zero continuous pressure drop across all master shower heads.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- SECTION 2: 4-STAGE WATER REFINING ARCHITECTURE                    -->
+<!-- ================================================================= -->
+<section id="purification-stages" class="py-24 bg-[var(--bg-color)] border-b border-[var(--border-light)] transition-colors">
+  <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Comprehensive Mechanical Flow</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] font-display mt-2 tracking-tight">
+        From Raw Municipal Tap to Lab-Grade Purity.
+      </h2>
+      <p class="text-sm sm:text-base text-[var(--text-muted)] mt-4">
+        A coordinated multi-barrier installation where each stage isolates specific physical and chemical water profiles.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Stage 1 -->
+      <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:border-[var(--accent)]/50 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold text-[var(--accent)] px-3 py-1 rounded-full bg-[var(--accent-light)]">STAGE 01</span>
+            <i class="fas fa-filter text-[var(--text-muted)]"></i>
+          </div>
+          <h3 class="text-lg font-bold text-[var(--text-main)] font-display">Sediment Micro-Screen</h3>
+          <p class="text-xs text-[var(--text-muted)] mt-2 leading-relaxed">
+            Auto-backwashing 50-micron stainless core strips sand, silt, rust, and pipe scale before it touches valve mechanisms.
+          </p>
+        </div>
+        <div class="pt-4 mt-6 border-t border-[var(--border-light)] text-[11px] font-mono text-[var(--text-muted)]">
+          TARGET: Particulates &gt; 50µm
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:border-[var(--accent)]/50 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold text-[var(--accent)] px-3 py-1 rounded-full bg-[var(--accent-light)]">STAGE 02</span>
+            <i class="fas fa-smog text-[var(--text-muted)]"></i>
+          </div>
+          <h3 class="text-lg font-bold text-[var(--text-main)] font-display">Catalytic Carbon Bed</h3>
+          <p class="text-xs text-[var(--text-muted)] mt-2 leading-relaxed">
+            High-iodine activated carbon strips municipal chlorine, disinfection byproducts (THMs), industrial VOCs, and sulfur odors.
+          </p>
+        </div>
+        <div class="pt-4 mt-6 border-t border-[var(--border-light)] text-[11px] font-mono text-[var(--text-muted)]">
+          TARGET: Chlorine &amp; Chemical Odors
+        </div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:border-[var(--accent)]/50 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold text-[var(--accent)] px-3 py-1 rounded-full bg-[var(--accent-light)]">STAGE 03</span>
+            <i class="fas fa-droplet text-[var(--text-muted)]"></i>
+          </div>
+          <h3 class="text-lg font-bold text-[var(--text-main)] font-display">10% Cross-Link Softener</h3>
+          <p class="text-xs text-[var(--text-muted)] mt-2 leading-relaxed">
+            Ion exchange replaces scale-forming calcium and magnesium with sodium ions, completely eliminating mineral buildup.
+          </p>
+        </div>
+        <div class="pt-4 mt-6 border-t border-[var(--border-light)] text-[11px] font-mono text-[var(--text-muted)]">
+          TARGET: 0.0 GPG Mineral Hardness
+        </div>
+      </div>
+
+      <!-- Stage 4 -->
+      <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:border-[var(--accent)]/50 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-bold text-[var(--accent)] px-3 py-1 rounded-full bg-[var(--accent-light)]">STAGE 04</span>
+            <i class="fas fa-flask-vial text-[var(--text-muted)]"></i>
+          </div>
+          <h3 class="text-lg font-bold text-[var(--text-main)] font-display">Alkaline Remineralized RO</h3>
+          <p class="text-xs text-[var(--text-muted)] mt-2 leading-relaxed">
+            Point-of-use sub-micron membrane captures PFAS, lead, and microplastics, then restores natural calcite for an alkaline pH of 8.0+.
+          </p>
+        </div>
+        <div class="pt-4 mt-6 border-t border-[var(--border-light)] text-[11px] font-mono text-[var(--text-muted)]">
+          TARGET: PFAS &amp; Micro-Contaminants
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- SECTION 3: HOME ROI & APPLIANCE PRESERVATION MATRIX               -->
+<!-- ================================================================= -->
+<section id="protection-roi" class="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-light)] transition-colors">
+  <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <div class="lg:col-span-5 space-y-6">
+        <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Long-Term Economics</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] font-display leading-[1.15]">
+          A Protective Shield for Your Plumbing Capital.
+        </h2>
+        <p class="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
+          Hard water is corrosive to heating elements and reduces the working lifespan of luxury plumbing fixtures. Water conditioning protects appliances from premature replacement.
+        </p>
+
+        <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] space-y-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-[var(--text-main)]">Average Annual Soap &amp; Chemical Savings</span>
+            <span class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">+$480/yr</span>
+          </div>
+          <div class="flex items-center justify-between border-t border-[var(--border-light)] pt-3">
+            <span class="text-xs font-bold text-[var(--text-main)]">Water Heater Energy Efficiency Drop Prevented</span>
+            <span class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">Up to 29%</span>
+          </div>
+          <div class="flex items-center justify-between border-t border-[var(--border-light)] pt-3">
+            <span class="text-xs font-bold text-[var(--text-main)]">Typical 5-Year Capital Preservation</span>
+            <span class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">+$4,200</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Metrics Cards -->
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-base">
+            <i class="fas fa-triangle-exclamation"></i>
+          </div>
+          <h4 class="text-base font-bold text-[var(--text-main)]">Without Conditioning</h4>
+          <ul class="text-xs text-[var(--text-muted)] space-y-2 leading-relaxed">
+            <li>• Tankless heating coils descale required every 6–9 months.</li>
+            <li>• Faucets and high-end matte fixtures show mineral pitting in 24 months.</li>
+            <li>• Detergents require 2.5× higher volume to cut surface tension.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--accent)]/30 shadow-md space-y-3 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-2 h-full bg-[var(--accent)]"></div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-base">
+            <i class="fas fa-shield-heart"></i>
+          </div>
+          <h4 class="text-base font-bold text-[var(--text-main)]">Conditioned Soft Water</h4>
+          <ul class="text-xs text-[var(--text-muted)] space-y-2 leading-relaxed">
+            <li>• Water heaters operate at full factory BTU efficiency for 15+ years.</li>
+            <li>• Zero scale etching on shower glass, polished nickel, or porcelain.</li>
+            <li>• Dishwashers and washing machines remain scale-free and pristine.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- SECTION 4: SINGLE UNIFIED KNOWLEDGE BASE & SEARCHABLE FAQ         -->
+<!-- ================================================================= -->
+<section id="faq-knowledgebase" class="py-24 bg-[var(--bg-color)] border-b border-[var(--border-light)] transition-colors">
+  <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+    
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Frequently Asked Questions</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] font-display mt-2 tracking-tight">
+          Everything About Installation, Salts &amp; Health.
+        </h2>
+        <p class="text-sm sm:text-base text-[var(--text-muted)] mt-2">Filter answers or search directly by technical topic.</p>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="w-full lg:w-96 relative">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)] text-sm"></i>
+        <input 
+          type="search" 
+          id="faq-search" 
+          placeholder="Search salt, skin, piping, warranty..." 
+          class="w-full pl-11 pr-4 py-3 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-main)] text-sm placeholder-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
+        />
+      </div>
+    </div>
+
+    <!-- Category Filter Buttons -->
+    <div class="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-[var(--border-light)]" id="category-pills">
+      <button type="button" data-cat="all" class="cat-pill active px-4 py-2 rounded-xl text-xs font-bold tracking-wide transition-all bg-[var(--accent)] text-white">
+        All Questions
+      </button>
+      <button type="button" data-cat="chemistry" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold tracking-wide transition-all bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-muted)] hover:text-[var(--text-main)]">
+        Water Chemistry &amp; Softening
+      </button>
+      <button type="button" data-cat="piping" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold tracking-wide transition-all bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-muted)] hover:text-[var(--text-main)]">
+        Piping &amp; Installation
+      </button>
+      <button type="button" data-cat="purification" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold tracking-wide transition-all bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-muted)] hover:text-[var(--text-main)]">
+        Drinking Water &amp; PFAS
+      </button>
+      <button type="button" data-cat="warranty" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold tracking-wide transition-all bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-muted)] hover:text-[var(--text-main)]">
+        Warranty &amp; Service
+      </button>
+    </div>
+
+    <!-- Searchable Accordion Items (Native Details/Summary) -->
+    <div class="space-y-4 max-w-4xl mx-auto" id="faq-list">
+      
+      <details class="faq-item group rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-light)] p-6 transition-all duration-300 open:shadow-md" data-category="chemistry">
+        <summary class="flex justify-between items-center font-display font-bold text-base sm:text-lg text-[var(--text-main)] cursor-pointer list-none select-none">
+          <span>How does an ion-exchange softener eliminate hard water minerals without chemical taste?</span>
+          <span class="w-8 h-8 rounded-full bg-[var(--bg-card)] border border-[var(--border-light)] flex items-center justify-center shrink-0 text-xs transition-transform duration-300 group-open:rotate-180">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </summary>
+        <div class="pt-4 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] mt-4">
+          Ion-exchange technology uses high-grade spherical resin beads charged with mild sodium or potassium ions. As raw water passes through the pressure vessel, mineral ions like calcium ($Ca^{2+}$) and magnesium ($Mg^{2+}$) bond magnetically to the resin and exchange for sodium. Because only trace levels of minerals are swapped, the water carries no salty flavor while completely preventing scale buildup.
+        </div>
+      </details>
+
+      <details class="faq-item group rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-light)] p-6 transition-all duration-300 open:shadow-md" data-category="chemistry">
+        <summary class="flex justify-between items-center font-display font-bold text-base sm:text-lg text-[var(--text-main)] cursor-pointer list-none select-none">
+          <span>Will soft water make my skin and hair feel slippery after showering?</span>
+          <span class="w-8 h-8 rounded-full bg-[var(--bg-card)] border border-[var(--border-light)] flex items-center justify-center shrink-0 text-xs transition-transform duration-300 group-open:rotate-180">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </summary>
+        <div class="pt-4 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] mt-4">
+          That silky, smooth sensation is your natural skin lipids completely free from chalky mineral soap curd. In hard water, calcium reacts with soaps to leave an insoluble curd film that clogs pores and dries skin. Soft water rinses soap clean, restoring natural hydration and reducing eczema irritation.
+        </div>
+      </details>
+
+      <details class="faq-item group rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-light)] p-6 transition-all duration-300 open:shadow-md" data-category="piping">
+        <summary class="flex justify-between items-center font-display font-bold text-base sm:text-lg text-[var(--text-main)] cursor-pointer list-none select-none">
+          <span>How long does installation take, and will my water be shut off all day?</span>
+          <span class="w-8 h-8 rounded-full bg-[var(--bg-card)] border border-[var(--border-light)] flex items-center justify-center shrink-0 text-xs transition-transform duration-300 group-open:rotate-180">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </summary>
+        <div class="pt-4 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] mt-4">
+          A standard residential installation takes between 3 to 5 hours. Your main water line is shut off for only 45 to 60 minutes while our master plumbers sweat the primary copper tie-ins and mount the 3-valve bypass manifold. Once bypassed, full household pressure is restored while we calibrate tanks and brine electronics.
+        </div>
+      </details>
+
+      <details class="faq-item group rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-light)] p-6 transition-all duration-300 open:shadow-md" data-category="piping">
+        <summary class="flex justify-between items-center font-display font-bold text-base sm:text-lg text-[var(--text-main)] cursor-pointer list-none select-none">
+          <span>What if my home doesn't have a pre-plumbed water softener loop?</span>
+          <span class="w-8 h-8 rounded-full bg-[var(--bg-card)] border border-[var(--border-light)] flex items-center justify-center shrink-0 text-xs transition-transform duration-300 group-open:rotate-180">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </summary>
+        <div class="pt-4 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] mt-4">
+          Many homes lack a pre-built loop. Our licensed plumbers tap into your main water line where it enters the property. We route clean copper or expansion PEX-A lines to your utility area, isolate outdoor hose bibbs to prevent wasting softened water on lawns, and tie drain lines into code-approved air gaps.
+        </div>
+      </details>
+
+      <details class="faq-item group rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-light)] p-6 transition-all duration-300 open:shadow-md" data-category="purification">
+        <summary class="flex justify-between items-center font-display font-bold text-base sm:text-lg text-[var(--text-main)] cursor-pointer list-none select-none">
+          <span>Does a water softener eliminate toxic contaminants like PFAS and microplastics?</span>
+          <span class="w-8 h-8 rounded-full bg-[var(--bg-card)] border border-[var(--border-light)] flex items-center justify-center shrink-0 text-xs transition-transform duration-300 group-open:rotate-180">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </summary>
+        <div class="pt-4 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] mt-4">
+          No. Softeners are engineered exclusively to exchange mineral hardness ions (calcium and magnesium). To strip PFAS "forever chemicals", pharmaceutical residues, and chlorine, we integrate an upstream catalytic activated carbon bed, paired with an under-sink reverse osmosis system for dedicated drinking and cooking water.
+        </div>
+      </details>
+
+      <details class="faq-item group rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-light)] p-6 transition-all duration-300 open:shadow-md" data-category="warranty">
+        <summary class="flex justify-between items-center font-display font-bold text-base sm:text-lg text-[var(--text-main)] cursor-pointer list-none select-none">
+          <span>What is covered under the 10-Year Comprehensive System Warranty?</span>
+          <span class="w-8 h-8 rounded-full bg-[var(--bg-card)] border border-[var(--border-light)] flex items-center justify-center shrink-0 text-xs transition-transform duration-300 group-open:rotate-180">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </summary>
+        <div class="pt-4 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] mt-4">
+          Our warranty covers the fiberglass composite pressure vessel, digital metering valve body, internal drive motor, optical sensors, and 10% cross-linked resin matrix against defects or breakdown. Both genuine replacement parts and certified technician labor are included with zero deductible.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- SECTION 5: IN-HOME WATER DIAGNOSTIC & MASTER PLUMBER CONSULTATION -->
+<!-- ================================================================= -->
+<section id="book-consultation" class="py-24 bg-[var(--bg-secondary)] transition-colors">
+  <div class="max-w-[1380px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="p-8 sm:p-12 lg:p-16 rounded-[36px] bg-[var(--bg-card)] border border-[var(--border-light)] shadow-2xl relative overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Complimentary Engineering Audit</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-[var(--text-main)] font-display leading-tight">
+            Schedule an In-Home Water Diagnostic.
+          </h2>
+          <p class="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
+            Every home's plumbing architecture and municipal water chemistry are unique. Receive an onsite digital titration test (GPG, TDS, Chlorine, and pH) paired with a mechanical loop evaluation.
+          </p>
+          
+          <div class="space-y-4 pt-2">
+            <div class="flex items-center gap-3 text-sm text-[var(--text-main)]">
+              <i class="fas fa-circle-check text-emerald-500 text-base shrink-0"></i>
+              <span>Laboratory-accurate digital titration assay completed at your kitchen tap</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-[var(--text-main)]">
+              <i class="fas fa-circle-check text-emerald-500 text-base shrink-0"></i>
+              <span>Inspection of existing loop, main shutoff valve, and mechanical room clearances</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-[var(--text-main)]">
+              <i class="fas fa-circle-check text-emerald-500 text-base shrink-0"></i>
+              <span>Transparent, written fixed-price quotation with no salesperson pressure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultation Form -->
+        <div class="lg:col-span-6">
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Audit request confirmed. Our dispatch team will call within 2 business hours to schedule your in-home diagnostic.');">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">First &amp; Last Name</label>
+                <input type="text" required placeholder="Elena Rostova" class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">Phone Number</label>
+                <input type="tel" required placeholder="(555) 890-1234" class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">Email Address</label>
+                <input type="email" required placeholder="elena@example.com" class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">Service Zip Code</label>
+                <input type="text" required placeholder="90210" class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-[var(--text-main)] mb-1.5">Current Water Source &amp; Primary Concern</label>
+              <select class="w-full px-4 py-3 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)] text-[var(--text-main)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all">
+                <option>City Water — Hard scale and dry skin</option>
+                <option>City Water — Chlorine odor and chemical concerns</option>
+                <option>Private Well — Severe hardness, iron, and sulfur smell</option>
+                <option>New Home Build — Pre-plumbed loop inspection</option>
+              </select>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-2xl bg-[var(--accent)] text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:opacity-95 transition-all">
+              <i class="fas fa-calendar-check mr-2"></i> Confirm My Complimentary Audit
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= -->
+<!-- COMPACT JAVASCRIPT: SIZING LOGIC & FAQ FILTERING                  -->
+<!-- ================================================================= -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Hardness Calculator Sizing Logic
+    const residentsInput = document.getElementById('calc-residents');
+    const gpgInput = document.getElementById('calc-gpg');
+    const residentsVal = document.getElementById('residents-val');
+    const gpgVal = document.getElementById('gpg-val');
+    const capacityDisplay = document.getElementById('recommended-capacity');
+    const tankSpec = document.getElementById('tank-spec');
+    const saltSpec = document.getElementById('salt-spec');
+
+    function updateCalculator() {
+      const residents = parseInt(residentsInput.value, 10);
+      const gpg = parseInt(gpgInput.value, 10);
+
+      residentsVal.textContent = `${residents} ${residents === 1 ? 'Person' : 'People'}`;
+      
+      let hardnessLabel = 'Moderate';
+      if (gpg > 10) hardnessLabel = 'Hard';
+      if (gpg > 18) hardnessLabel = 'Very Hard';
+      if (gpg > 25) hardnessLabel = 'Extremely Hard';
+      gpgVal.textContent = `${gpg} GPG (${hardnessLabel})`;
+
+      // Sizing calculation: daily grains = people * 75 gal/day * GPG
+      // Multiply by 7 days for a weekly regeneration buffer
+      const weeklyGrains = residents * 75 * gpg * 7;
+
+      if (weeklyGrains <= 24000) {
+        capacityDisplay.textContent = '24,000 Grains';
+        tankSpec.textContent = '8" × 44" Slimline';
+        saltSpec.textContent = '1 Bag / 8–10 Weeks';
+      } else if (weeklyGrains <= 32000) {
+        capacityDisplay.textContent = '32,000 Grains';
+        tankSpec.textContent = '9" × 48" Standard';
+        saltSpec.textContent = '1 Bag / 7–8 Weeks';
+      } else if (weeklyGrains <= 48000) {
+        capacityDisplay.textContent = '48,000 Grains';
+        tankSpec.textContent = '10" × 54" Heavy-Duty';
+        saltSpec.textContent = '1 Bag / 6–7 Weeks';
+      } else if (weeklyGrains <= 64000) {
+        capacityDisplay.textContent = '64,000 Grains';
+        tankSpec.textContent = '12" × 52" Estate High-Flow';
+        saltSpec.textContent = '1 Bag / 5–6 Weeks';
+      } else {
+        capacityDisplay.textContent = '80,000+ Twin Alternating';
+        tankSpec.textContent = 'Dual 10" × 54" Continuous';
+        saltSpec.textContent = '1 Bag / 4 Weeks';
+      }
+    }
+
+    if (residentsInput && gpgInput) {
+      residentsInput.addEventListener('input', updateCalculator);
+      gpgInput.addEventListener('input', updateCalculator);
+      updateCalculator();
+    }
+
+    // 2. FAQ Instant Search and Pill Filtering
+    const searchInput = document.getElementById('faq-search');
+    const pills = document.querySelectorAll('.cat-pill');
+    const items = document.querySelectorAll('#faq-list .faq-item');
+
+    let activeCat = 'all';
+    let searchQuery = '';
+
+    function filterFaqs() {
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const cat = item.getAttribute('data-category');
+        const matchesCategory = (activeCat === 'all' || cat === activeCat);
+        const matchesSearch = text.includes(searchQuery);
+
+        if (matchesCategory && matchesSearch) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('bg-[var(--accent)]', 'text-white');
+          p.classList.add('bg-[var(--bg-secondary)]', 'border', 'border-[var(--border-light)]', 'text-[var(--text-muted)]');
+        });
+        pill.classList.remove('bg-[var(--bg-secondary)]', 'border', 'border-[var(--border-light)]', 'text-[var(--text-muted)]');
+        pill.classList.add('bg-[var(--accent)]', 'text-white');
+
+        activeCat = pill.getAttribute('data-cat');
+        filterFaqs();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        filterFaqs();
+      });
+    }
+  });
+</script>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER (WATER SOFTENER & FILTRATION INSTALLER)               -->
+    <!-- ============================================================ -->
+    <footer>
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Brand Info -->
+                <div>
+                    <a href="index.html" class="brand-link inline-flex">
+                        <div class="brand-icon-wrapper">
+                            <i class="fas fa-droplet"></i>
+                        </div>
+                        <div class="brand-logo" style="color: #f8fafc !important;">
+                            <span style="color: var(--accent) !important;">Aqua</span><span style="color: #f8fafc !important;">Pure</span>
+                        </div>
+                    </a>
+                    <p class="text-[#94a3b8] text-sm leading-relaxed mt-4">Professional residential water softener and whole-home filtration installation. Protecting household appliances, water heaters, and family health with certified water treatment.</p>
+                    <div class="flex gap-3 mt-5">
+                        <a href="https://facebook.com" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" class="social-circle"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com" class="social-circle"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Explore Links -->
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="index.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Home</a></li>
+                        <li><a href="about.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> About</a></li>
+                        <li><a href="solutions.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Solutions</a></li>
+                        <li><a href="products.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Products</a></li>
+                        <li><a href="water-testing.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Water Testing</a></li>
+                        <li><a href="contact.html" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> contact</a></li>
+                        <li><a href="#" class="hover:pl-2 transition-all inline-flex items-center gap-2 text-[var(--accent)]"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Book Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Offerings -->
+                <div>
+                    <h4>System Types</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="products.html#smart-ion-exchange-softeners" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Smart Ion-Exchange Softeners</a></li>
+                        <li><a href="products.html#catalytic-carbon-filtration" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Catalytic Carbon Filtration</a></li>
+                        <li><a href="products.html#reverse-osmosis-ro-systems" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Reverse Osmosis (RO) Systems</a></li>
+                        <li><a href="products.html#uv-microbial-sterilization" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> UV Microbial Sterilization</a></li>
+                        <li><a href="products.html#well-water铁-sulfur-filter" class="hover:pl-2 transition-all inline-flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-[var(--accent)]"></i> Well Water Iron &amp; Sulfur Filter</a></li>
+                    </ul>
+                </div>
+
+                <!-- Studio / Office -->
+                <div>
+                    <h4>Installer Headquarters</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-[var(--accent)] mt-0.5"></i>
+                            <span class="text-[#94a3b8]">742 Clearwater Blvd, Suite 200, Metro Area</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-phone text-[var(--accent)] mt-0.5"></i>
+                            <span class="text-[#94a3b8]"><a href="tel:+18005557873">(800) 555-PURE (7873)</a></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-envelope text-[var(--accent)] mt-0.5"></i>
+                            <span class="text-[#94a3b8]"><a href="mailto:service@aquapuresoftener.com">service@aquapuresoftener.com</a></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-clock text-[var(--accent)] mt-0.5"></i>
+                            <span class="text-[#94a3b8]">Mon–Fri 7am–7pm · Sat 8am–4pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-[rgba(2,132,199,0.15)] py-6 mt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-[#64748b]">&copy; 2026 <span class="text-[var(--accent)] font-semibold">AquaPure</span> Solutions LLC. All rights reserved. Master Licensed Plumbers.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="warranty.html" class="text-[#64748b] hover:text-[var(--accent)]">Warranty Terms</a>
+                    <a href="privacy.html" class="text-[#64748b] hover:text-[var(--accent)]">Privacy Policy</a>
+                    <a href="nsf.html" class="text-[#64748b] hover:text-[var(--accent)]">NSF Standards</a>
+                </div>
+            </div>
+
+            <div class="text-center pb-8">
+                <a href="#main-nav" class="inline-flex items-center gap-2 text-[#64748b] text-xs font-semibold uppercase tracking-widest hover:text-[var(--accent)]">
+                    <i class="fas fa-arrow-up"></i> Back to Top
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- SCRIPTS                                                      -->
+    <!-- ============================================================ -->
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 30) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Mobile Menu Drawer
+        const mobileBtn = document.getElementById('mobile-btn');
+        const fullscreenMenu = document.getElementById('fullscreen-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+
+        function toggleMenu() {
+            fullscreenMenu.classList.toggle('active');
+            drawerOverlay.classList.toggle('active');
+            document.body.style.overflow = fullscreenMenu.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function closeMenu() {
+            fullscreenMenu.classList.remove('active');
+            drawerOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (mobileBtn) mobileBtn.onclick = toggleMenu;
+        if (closeMenuBtn) closeMenuBtn.onclick = closeMenu;
+        if (drawerOverlay) drawerOverlay.onclick = closeMenu;
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1280) closeMenu();
+        });
+
+        // Theme Toggle (Dark / Light)
+        const themeDesk = document.getElementById('theme-toggle-desktop');
+        const themeMob = document.getElementById('theme-toggle-mobile');
+        const iconDesk = document.getElementById('theme-icon-desktop');
+        const iconMob = document.getElementById('theme-icon-mobile');
+
+        const savedTheme = localStorage.getItem('aquapure-theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDark = savedTheme ? savedTheme === 'dark' : systemDark;
+
+        function setTheme(dark) {
+            if (dark) {
+                document.body.classList.add('dark-mode');
+                if (iconDesk) iconDesk.className = 'fas fa-sun';
+                if (iconMob) iconMob.className = 'fas fa-sun';
+                localStorage.setItem('aquapure-theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                if (iconDesk) iconDesk.className = 'fas fa-moon';
+                if (iconMob) iconMob.className = 'fas fa-moon';
+                localStorage.setItem('aquapure-theme', 'light');
+            }
+        }
+        setTheme(isDark);
+
+        function toggleTheme() {
+            const currentlyDark = document.body.classList.contains('dark-mode');
+            setTheme(!currentlyDark);
+        }
+        if (themeDesk) themeDesk.addEventListener('click', toggleTheme);
+        if (themeMob) themeMob.addEventListener('click', toggleTheme);
+
+        // Direction Toggle (RTL / LTR)
+        const rtlBtn = document.getElementById('rtl-btn');
+        const rtlMob = document.getElementById('rtl-toggle-mobile');
+        const rtlTexts = document.querySelectorAll('.rtl-text');
+
+        function toggleRTL() {
+            const html = document.documentElement;
+            if (html.dir === 'rtl') {
+                html.dir = 'ltr';
+                rtlTexts.forEach(el => el.textContent = 'LTR');
+                if (rtlBtn) rtlBtn.innerHTML = 'LTR';
+            } else {
+                html.dir = 'rtl';
+                rtlTexts.forEach(el => el.textContent = 'RTL');
+                if (rtlBtn) rtlBtn.innerHTML = 'RTL';
+            }
+        }
+        if (rtlBtn) rtlBtn.addEventListener('click', toggleRTL);
+        if (rtlMob) rtlMob.addEventListener('click', toggleRTL);
+
+        // Mobile Dropdown Accordion
+        const homeToggle = document.getElementById('mobile-home-toggle');
+        const homeItems = document.getElementById('mobile-home-items');
+        if (homeToggle && homeItems) {
+            homeToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('open');
+                homeItems.classList.toggle('open');
+            });
+        }
+    </script>
+</body>
+</html>
