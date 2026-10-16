@@ -517,6 +517,32 @@
         .theme-btn { width: 38px; padding: 0; }
         .rtl-toggle { padding: 0 16px; }
         .navbar .btn { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; }
+
+        /* Form Inputs */
+        .form-input {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            font-size: 13px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
+        }
+        select.form-input {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            word-wrap: normal;
+        }
     </style>
 </head>
 <body>
@@ -716,43 +742,43 @@
                     <div class="relative rounded-3xl overflow-hidden border border-[var(--border-light)] bg-[var(--bg-card)] shadow-2xl p-3 sm:p-4">
                         <div class="relative rounded-2xl overflow-hidden">
                             <img 
-                                src="img/oi1.webp" 
+                                src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1200&q=80" 
                                 alt="Whole house water filtration and purification manifold installation"
                                 class="w-full h-[430px] sm:h-[480px] object-cover object-center"
                             />
-                            <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-inverted)]/85 via-[var(--bg-inverted)]/25 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
                             
                             <!-- Overlay Metric Tags -->
                             <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
-                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--bg-card)]/90 backdrop-blur-md text-[10px] font-bold text-[var(--text-main)] border border-[var(--border-light)]">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Active Filtration
+                                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 backdrop-blur-md text-[10px] font-bold text-white border border-white/20 shadow-md">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Active Filtration
                                 </span>
-                                <span class="px-3 py-1 rounded-full bg-[var(--accent)] text-white text-[10px] font-bold tracking-wider uppercase">
+                                <span class="px-3 py-1 rounded-full bg-sky-500 text-white text-[10px] font-bold tracking-wider uppercase shadow-md">
                                     ANSI/NSF 53 & 58
                                 </span>
                             </div>
 
                             <!-- Bottom Floating System Status Panel -->
-                            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[var(--bg-card)]/95 backdrop-blur-xl border border-[var(--border-light)]">
-                                <div class="flex items-center justify-between border-b border-[var(--border-light)] pb-2 mb-2">
+                            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-white/20 shadow-2xl text-white">
+                                <div class="flex items-center justify-between border-b border-white/15 pb-2 mb-2">
                                     <div>
-                                        <p class="text-[10px] uppercase font-bold text-[var(--text-dim)] tracking-wider">Filtration Stage</p>
-                                        <p class="text-xs font-bold text-[var(--text-main)]">4-Stage Whole Home Manifold</p>
+                                        <p class="text-[10px] uppercase font-bold text-slate-300 tracking-wider">Filtration Stage</p>
+                                        <p class="text-xs font-bold text-white">4-Stage Whole Home Manifold</p>
                                     </div>
-                                    <span class="text-xs font-extrabold text-[var(--accent)]">99.8% TDS Reduction</span>
+                                    <span class="text-xs font-extrabold text-sky-400">99.8% TDS Reduction</span>
                                 </div>
                                 <div class="grid grid-cols-3 gap-2 text-center pt-1">
                                     <div>
-                                        <span class="text-[10px] text-[var(--text-dim)] block">Lead & PFAS</span>
-                                        <span class="text-xs font-bold text-emerald-500">ND (&lt;0.01)</span>
+                                        <span class="text-[10px] text-slate-300 block font-medium">Lead & PFAS</span>
+                                        <span class="text-xs font-bold text-emerald-400">ND (&lt;0.01)</span>
                                     </div>
                                     <div>
-                                        <span class="text-[10px] text-[var(--text-dim)] block">Flow Rate</span>
-                                        <span class="text-xs font-bold text-[var(--text-main)]">15 GPM High</span>
+                                        <span class="text-[10px] text-slate-300 block font-medium">Flow Rate</span>
+                                        <span class="text-xs font-bold text-white">15 GPM High</span>
                                     </div>
                                     <div>
-                                        <span class="text-[10px] text-[var(--text-dim)] block">Filter Life</span>
-                                        <span class="text-xs font-bold text-[var(--text-main)]">100,000 Gal</span>
+                                        <span class="text-[10px] text-slate-300 block font-medium">Filter Life</span>
+                                        <span class="text-xs font-bold text-white">100,000 Gal</span>
                                     </div>
                                 </div>
                             </div>
@@ -781,7 +807,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-7 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] p-6 sm:p-8 relative overflow-hidden shadow-xl">
                     <div class="relative w-full h-[360px] sm:h-[420px] rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center">
-                        <img src="img/oi2.webp" alt="Hydraulic water treatment manifold hardware" class="w-full h-full object-cover opacity-60" />
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Hydraulic water treatment manifold hardware" class="w-full h-full object-cover opacity-60" />
                         <button type="button" onclick="setHotspot(1)" class="hotspot-btn absolute top-[28%] left-[22%] w-10 h-10 rounded-full bg-[var(--accent)] text-white flex items-center justify-center font-bold text-xs shadow-lg animate-bounce border-2 border-white">01</button>
                         <button type="button" onclick="setHotspot(2)" class="hotspot-btn absolute top-[44%] left-[52%] w-10 h-10 rounded-full bg-[var(--accent)] text-white flex items-center justify-center font-bold text-xs shadow-lg animate-pulse border-2 border-white">02</button>
                         <button type="button" onclick="setHotspot(3)" class="hotspot-btn absolute top-[36%] left-[78%] w-10 h-10 rounded-full bg-[var(--accent)] text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white">03</button>
@@ -942,14 +968,14 @@
                 <div class="lg:col-span-6 relative">
                     <div class="relative rounded-3xl overflow-hidden border border-[var(--border-light)] shadow-2xl group">
                         <img src="https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=1200&q=80" alt="Copper pipe interior damage and calcium accumulation" class="w-full h-[480px] object-cover group-hover:scale-105 transition-transform duration-700" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/90 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/10 dark:bg-black/40 backdrop-blur-md border border-white/20 text-white">
-                            <div class="flex items-center justify-between">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/20 text-white shadow-2xl">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                 <div>
                                     <div class="text-xs font-bold uppercase tracking-wider text-rose-400">Untreated Pipe Section (5 Years Old)</div>
-                                    <div class="text-sm font-semibold mt-0.5">Severe inner diameter restriction from mineral rock layering.</div>
+                                    <div class="text-sm font-semibold text-white mt-0.5">Severe inner diameter restriction from mineral rock layering.</div>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-rose-600 text-white text-[10px] font-bold uppercase">Severe Scale</span>
+                                <span class="px-3 py-1 rounded-full bg-rose-600 text-white text-[10px] font-bold uppercase self-start sm:self-auto shrink-0 shadow-md">Severe Scale</span>
                             </div>
                         </div>
                     </div>

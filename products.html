@@ -517,6 +517,32 @@
         .theme-btn { width: 38px; padding: 0; }
         .rtl-toggle { padding: 0 16px; }
         .navbar .btn { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; }
+
+        /* Form Inputs */
+        .form-input {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            font-size: 13px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
+        }
+        select.form-input {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            word-wrap: normal;
+        }
     </style>
 </head>
 <body>
@@ -805,47 +831,47 @@
                         Turnkey Craftsmanship in Clean Manifolds.
                     </h2>
                 </div>
-                <p class="text-sm text-[var(--text-muted)] max-w-md">Every installation is aligned with rigid copper press loops, balanced bypass manifolds, and integrated pressure gauges[cite: 1].</p>
+                <p class="text-sm text-[var(--text-muted)] max-w-md">Every installation is aligned with rigid copper press loops, balanced bypass manifolds, and integrated pressure gauges.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div class="md:col-span-7 group relative rounded-3xl overflow-hidden border border-[var(--border-light)] shadow-lg min-h-[380px]">
                     <img src="img/lk5.webp" alt="Estate water softener manifold" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/50 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-[#38bdf8] bg-white/10 px-3 py-1 rounded-full backdrop-blur-md">Custom Estate Rig</span>
-                        <h3 class="text-xl font-bold mt-2 font-display">Twin-Tank High-Flow Softening Loop</h3>
-                        <p class="text-xs text-slate-300 mt-1 max-w-md">Provides 24/7 continuous soft water during simultaneous irrigation cycles and master-bath usage.</p>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-sky-300 bg-slate-900/80 border border-white/20 px-3 py-1 rounded-full backdrop-blur-md">Custom Estate Rig</span>
+                        <h3 class="text-xl font-bold mt-2 font-display text-white">Twin-Tank High-Flow Softening Loop</h3>
+                        <p class="text-xs text-slate-200 mt-1 max-w-md">Provides 24/7 continuous soft water during simultaneous irrigation cycles and master-bath usage.</p>
                     </div>
                 </div>
                 <div class="md:col-span-5 group relative rounded-3xl overflow-hidden border border-[var(--border-light)] shadow-lg min-h-[220px]">
                     <img src="img/li4.webp" alt="Precision valves and pressure gauges" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/50 to-transparent"></div>
                     <div class="absolute bottom-5 left-5 right-5 text-white">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-teal-300 bg-white/10 px-3 py-1 rounded-full backdrop-blur-md">Zero Pressure Loss</span>
-                        <h4 class="text-base font-bold mt-2 font-display">High-Flow Brass 3-Valve Bypass</h4>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-teal-300 bg-slate-900/80 border border-white/20 px-3 py-1 rounded-full backdrop-blur-md">Zero Pressure Loss</span>
+                        <h4 class="text-base font-bold mt-2 font-display text-white">High-Flow Brass 3-Valve Bypass</h4>
                     </div>
                 </div>
                 <div class="md:col-span-4 group relative rounded-3xl overflow-hidden border border-[var(--border-light)] shadow-lg min-h-[240px]">
                     <img src="img/li3.webp" alt="Kitchen under counter RO system" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/90 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-5 left-5 text-white">
-                        <h4 class="text-sm font-bold font-display">Kitchen RO Deployment</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-white/15 text-white">
+                        <h4 class="text-sm font-bold font-display text-white">Kitchen RO Deployment</h4>
                         <p class="text-[11px] text-slate-300">Dedicated lead-free beverage faucet.</p>
                     </div>
                 </div>
                 <div class="md:col-span-4 group relative rounded-3xl overflow-hidden border border-[var(--border-light)] shadow-lg min-h-[240px]">
                     <img src="img/li2.webp" alt="Plumber testing dynamic pressure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/90 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-5 left-5 text-white">
-                        <h4 class="text-sm font-bold font-display">Dynamic PSI Analysis</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-white/15 text-white">
+                        <h4 class="text-sm font-bold font-display text-white">Dynamic PSI Analysis</h4>
                         <p class="text-[11px] text-slate-300">Monitored to maintain 60–75 PSI target.</p>
                     </div>
                 </div>
                 <div class="md:col-span-4 group relative rounded-3xl overflow-hidden border border-[var(--border-light)] shadow-lg min-h-[240px]">
                     <img src="img/li1.webp" alt="Finished basement plumbing room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/90 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-5 left-5 text-white">
-                        <h4 class="text-sm font-bold font-display">Architectural Cleanliness</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-white/15 text-white">
+                        <h4 class="text-sm font-bold font-display text-white">Architectural Cleanliness</h4>
                         <p class="text-[11px] text-slate-300">Zero exposed wires or flexible hoses.</p>
                     </div>
                 </div>
@@ -878,7 +904,7 @@
                     <div>
                         <div class="w-14 h-14 rounded-2xl bg-[var(--bg-secondary)] text-[var(--accent)] border border-[var(--border-light)] flex items-center justify-center text-xl font-black mb-6 font-display">02</div>
                         <h3 class="text-xl font-bold text-[var(--text-main)] mb-3 font-display">Catalytic Carbon Bed</h3>
-                        <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6">Activated virgin carbon matrix removes synthetic chloramines, volatile organic compounds, and microplastics from all interior faucets[cite: 3].</p>
+                        <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6">Activated virgin carbon matrix removes synthetic chloramines, volatile organic compounds, and microplastics from all interior faucets.</p>
                     </div>
                     <div class="text-xs font-bold text-[var(--accent)] uppercase tracking-wider border-t border-[var(--border-light)] pt-4">Stage 2 · Adsorption Media</div>
                 </div>
@@ -886,7 +912,7 @@
                     <div>
                         <div class="w-14 h-14 rounded-2xl bg-[var(--bg-secondary)] text-[var(--accent)] border border-[var(--border-light)] flex items-center justify-center text-xl font-black mb-6 font-display">03</div>
                         <h3 class="text-xl font-bold text-[var(--text-main)] mb-3 font-display">Ion-Exchange Resin</h3>
-                        <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6">10% cross-linked polystyrene beads exchange hard minerals for sodium ions, completely eliminating limescale precipitation[cite: 4].</p>
+                        <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6">10% cross-linked polystyrene beads exchange hard minerals for sodium ions, completely eliminating limescale precipitation.</p>
                     </div>
                     <div class="text-xs font-bold text-[var(--accent)] uppercase tracking-wider border-t border-[var(--border-light)] pt-4">Stage 3 · Cation Exchange</div>
                 </div>
@@ -903,24 +929,24 @@
                 <div class="lg:col-span-7 relative">
                     <div class="relative rounded-3xl overflow-hidden border border-[var(--border-light)] shadow-2xl group">
                         <img src="img/li6.webp" alt="Turnkey water treatment hardware" class="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/70 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
                     </div>
-                    <div class="absolute -bottom-5 -left-5 bg-[var(--bg-card)]/90 backdrop-blur-xl border border-[var(--border-light)] p-4 rounded-2xl shadow-xl flex items-center gap-3">
-                        <div class="w-11 h-11 rounded-full bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center text-lg">
+                    <div class="absolute -bottom-5 -left-5 bg-[var(--bg-card)] border border-[var(--border-light)] p-4 rounded-2xl shadow-2xl flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center text-lg shrink-0">
                             <i class="fas fa-microchip"></i>
                         </div>
                         <div>
                             <div class="text-xs font-bold text-[var(--text-main)]">Optical Volumetric Sensor</div>
-                            <div class="text-[10px] text-[var(--text-muted)]">Measures down to 0.2 Gallons/Minute</div>
+                            <div class="text-[10px] text-[var(--text-muted)] font-medium">Measures down to 0.2 Gallons/Minute</div>
                         </div>
                     </div>
-                    <div class="absolute top-6 right-6 bg-[var(--bg-card)]/90 backdrop-blur-xl border border-[var(--border-light)] p-4 rounded-2xl shadow-xl hidden sm:flex items-center gap-3">
-                        <div class="w-11 h-11 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-lg">
+                    <div class="absolute top-6 right-6 bg-[var(--bg-card)] border border-[var(--border-light)] p-4 rounded-2xl shadow-2xl hidden sm:flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
                             <i class="fas fa-shield-check"></i>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-[var(--text-main)]">NSF/ANSI Standard 44 & 58[cite: 1]</div>
-                            <div class="text-[10px] text-[var(--text-muted)]">Certified structural pressure rating</div>
+                            <div class="text-xs font-bold text-[var(--text-main)]">NSF/ANSI Standard 44 & 58</div>
+                            <div class="text-[10px] text-[var(--text-muted)] font-medium">Certified structural pressure rating</div>
                         </div>
                     </div>
                 </div>
@@ -943,7 +969,7 @@
                         <div class="p-4 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)] flex gap-4 items-center">
                             <i class="fas fa-shield-heart text-xl text-[var(--accent)]"></i>
                             <div>
-                                <h4 class="text-sm font-bold text-[var(--text-main)]">10% Cross-Linked Resin[cite: 4]</h4>
+                                <h4 class="text-sm font-bold text-[var(--text-main)]">10% Cross-Linked Resin</h4>
                                 <p class="text-xs text-[var(--text-muted)]">Resists municipal chlorine degrading resin beads over time.</p>
                             </div>
                         </div>

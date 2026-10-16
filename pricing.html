@@ -517,6 +517,32 @@
         .theme-btn { width: 38px; padding: 0; }
         .rtl-toggle { padding: 0 16px; }
         .navbar .btn { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; }
+
+        /* Form Inputs */
+        .form-input {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            font-size: 13px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
+        }
+        select.form-input {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            word-wrap: normal;
+        }
     </style>
 </head>
 <body>
@@ -802,14 +828,14 @@
                             alt="Precision hydraulic plumbing manifold installation" 
                             class="w-full h-[480px] object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--text-main)]/85 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-white/10 dark:bg-black/40 backdrop-blur-md border border-white/20 text-white">
-                            <div class="flex items-center justify-between">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/20 text-white shadow-2xl">
+                            <div class="flex items-center justify-between gap-3">
                                 <div>
-                                    <div class="text-xs font-bold uppercase tracking-wider text-[#38bdf8]">Clean Mechanical Standard</div>
-                                    <div class="text-sm font-semibold mt-0.5">Commercial-grade brass hardware and isolation ball valves.</div>
+                                    <div class="text-xs font-bold uppercase tracking-wider text-sky-400">Clean Mechanical Standard</div>
+                                    <div class="text-sm font-semibold text-white mt-0.5">Commercial-grade brass hardware and isolation ball valves.</div>
                                 </div>
-                                <span class="w-10 h-10 rounded-full bg-[var(--accent)] text-white flex items-center justify-center text-sm font-bold shrink-0">
+                                <span class="w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center text-sm font-bold shrink-0 shadow-md">
                                     <i class="fas fa-check"></i>
                                 </span>
                             </div>

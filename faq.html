@@ -109,12 +109,16 @@
         }
 
         /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, .brand-logo, .font-display {
+        h1, h2, h3, h4, h5, h6, .brand-logo, .font-display {
             font-family: 'Plus Jakarta Sans', sans-serif;
             letter-spacing: -0.02em;
         }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600 !important;
+        }
         p {
             line-height: 1.7;
+            font-weight: 400 !important;
         }
 
         /* ===== PILL NAVBAR ===== */
@@ -517,6 +521,34 @@
         .theme-btn { width: 38px; padding: 0; }
         .rtl-toggle { padding: 0 16px; }
         .navbar .btn { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; }
+
+        /* Form Inputs */
+        .form-input {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding: 14px 20px !important;
+            border-radius: 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            font-size: 14px;
+            line-height: 1.5;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
+        }
+        select.form-input {
+            padding-right: 40px !important;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            word-wrap: normal;
+        }
     </style>
 </head>
 <body>

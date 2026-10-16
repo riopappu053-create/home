@@ -517,6 +517,32 @@
         .theme-btn { width: 38px; padding: 0; }
         .rtl-toggle { padding: 0 16px; }
         .navbar .btn { height: 38px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; margin: 0; }
+
+        /* Form Inputs */
+        .form-input {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            font-size: 13px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
+        }
+        select.form-input {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            word-wrap: normal;
+        }
     </style>
 </head>
 <body>
@@ -772,7 +798,7 @@
                         </h2>
 
                         <p class="text-xs sm:text-sm md:text-base text-[var(--text-muted)] leading-relaxed">
-                            Fill out the intake form to schedule an on-site visit. A licensed master plumber will evaluate hardness grains, flow rates, and dynamic plumbing line pressure[cite: 1, 6, 8].
+                            Fill out the intake form to schedule an on-site visit. A licensed master plumber will evaluate hardness grains, flow rates, and dynamic plumbing line pressure.
                         </p>
 
                         <div class="space-y-3 pt-1 sm:pt-2">
@@ -792,7 +818,7 @@
                                 </span>
                                 <div class="min-w-0">
                                     <div class="text-xs sm:text-sm font-bold text-[var(--text-main)] truncate">Complete Aqueous Assay</div>
-                                    <div class="text-[11px] text-[var(--text-muted)] leading-normal">20-minute digital grain, TDS, and chlorine testing[cite: 1, 6]</div>
+                                    <div class="text-[11px] text-[var(--text-muted)] leading-normal">20-minute digital grain, TDS, and chlorine testing</div>
                                 </div>
                             </div>
                         </div>
@@ -830,7 +856,7 @@
                                         <label class="block text-[11px] sm:text-xs font-bold text-[var(--text-main)] mb-1 uppercase tracking-wider">Primary System Goal</label>
                                         <select class="form-input !w-full">
                                             <option>Whole-Home Water Softener</option>
-                                            <option>Catalytic Carbon Filter (Chlorine/PFAS)[cite: 3]</option>
+                                            <option>Catalytic Carbon Filter (Chlorine/PFAS)</option>
                                             <option>Under-Sink Reverse Osmosis</option>
                                             <option>Comprehensive Water Suite</option>
                                         </select>
@@ -960,7 +986,7 @@
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[var(--text-main)] font-display mt-2">
                     Operating Schedule & Installation Hours.
                 </h2>
-                <p class="text-[var(--text-muted)] text-sm mt-3">We balance convenient weekday appointments with dedicated weekend dispatch for working homeowners[cite: 8].</p>
+                <p class="text-[var(--text-muted)] text-sm mt-3">We balance convenient weekday appointments with dedicated weekend dispatch for working homeowners.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:border-[var(--accent)] transition-all">
@@ -969,9 +995,9 @@
                     </div>
                     <span class="text-xs font-bold uppercase tracking-wider text-[var(--accent)] block mb-1">Standard Operations</span>
                     <h3 class="text-xl font-bold text-[var(--text-main)] mb-2 font-display">Monday – Friday</h3>
-                    <div class="text-2xl font-black text-[var(--text-main)] font-display mb-3">7:00 AM – 7:00 PM[cite: 8]</div>
+                    <div class="text-2xl font-black text-[var(--text-main)] font-display mb-3">7:00 AM – 7:00 PM</div>
                     <p class="text-xs text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] pt-4">
-                        Routine system installations, full loop rerouting, comprehensive on-site testing assays, and salt replenishment deliveries[cite: 6, 8].
+                        Routine system installations, full loop rerouting, comprehensive on-site testing assays, and salt replenishment deliveries.
                     </p>
                 </div>
                 <div class="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:border-[var(--accent)] transition-all">
@@ -980,9 +1006,9 @@
                     </div>
                     <span class="text-xs font-bold uppercase tracking-wider text-teal-600 block mb-1">Weekend Service</span>
                     <h3 class="text-xl font-bold text-[var(--text-main)] mb-2 font-display">Saturday Operations</h3>
-                    <div class="text-2xl font-black text-[var(--text-main)] font-display mb-3">8:00 AM – 4:00 PM[cite: 8]</div>
+                    <div class="text-2xl font-black text-[var(--text-main)] font-display mb-3">8:00 AM – 4:00 PM</div>
                     <p class="text-xs text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] pt-4">
-                        Scheduled residential diagnostics, warranty maintenance checkups, and weekend client consultations by appointment[cite: 8].
+                        Scheduled residential diagnostics, warranty maintenance checkups, and weekend client consultations by appointment.
                     </p>
                 </div>
                 <div class="p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-light)] shadow-sm hover:border-[var(--accent)] transition-all">
@@ -993,7 +1019,7 @@
                     <h3 class="text-xl font-bold text-[var(--text-main)] mb-2 font-display">Emergency Dispatch</h3>
                     <div class="text-2xl font-black text-[var(--text-main)] font-display mb-3">24/7 Priority Line</div>
                     <p class="text-xs text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-light)] pt-4">
-                        Emergency service for active bypass line failures, main water valve leaks, or sudden loss of domestic water pressure[cite: 3].
+                        Emergency service for active bypass line failures, main water valve leaks, or sudden loss of domestic water pressure.
                     </p>
                 </div>
             </div>
@@ -1040,7 +1066,7 @@
                         <div class="text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-2">On-Site Readiness</div>
                         <h3 class="text-2xl font-bold text-[var(--text-main)] font-display mb-4">Preparation Checklist for Homeowners</h3>
                         <p class="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed mb-6">
-                            To ensure an efficient 20-minute diagnostic assay, please ensure clear access to your main water inlet valve, water heater, and an untreated kitchen cold-water faucet[cite: 1, 6].
+                            To ensure an efficient 20-minute diagnostic assay, please ensure clear access to your main water inlet valve, water heater, and an untreated kitchen cold-water faucet.
                         </p>
                         <div class="p-5 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-light)] space-y-2.5 text-xs text-[var(--text-main)]">
                             <div class="flex items-center gap-2.5 font-semibold"><i class="fas fa-circle-check text-emerald-500"></i> Clear 3 feet of space around main shut-off valve</div>
@@ -1072,22 +1098,22 @@
                 </h2>
                 
                 <p class="text-sm sm:text-base text-[var(--text-muted)] max-w-2xl leading-relaxed mb-10">
-                    Schedule your free, zero-commitment in-home diagnostic test[cite: 1, 8]. Receive accurate laboratory hardness metrics, plumbing loop inspection, and a written itemized estimate[cite: 1, 6, 8].
+                    Schedule your free, zero-commitment in-home diagnostic test. Receive accurate laboratory hardness metrics, plumbing loop inspection, and a written itemized estimate.
                 </p>
                 
                 <div class="flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto">
                     <a href="#contact-form" class="btn btn-solid !py-4 !px-8 text-xs tracking-wider shadow-xl">
-                        <i class="fas fa-calendar-check mr-2"></i> Book Free Water Test[cite: 8]
+                        <i class="fas fa-calendar-check mr-2"></i> Book Free Water Test
                     </a>
                     <a href="tel:+18005557873" class="btn btn-outline !py-4 !px-8 text-xs tracking-wider">
-                        <i class="fas fa-phone mr-2 text-[var(--accent)]"></i> Call (800) 555-7873[cite: 8]
+                        <i class="fas fa-phone mr-2 text-[var(--accent)]"></i> Call (800) 555-7873
                     </a>
                 </div>
                 
                 <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mt-10 pt-8 border-t border-[var(--border-light)] text-xs text-[var(--text-muted)]">
-                    <span class="flex items-center gap-2"><i class="fas fa-shield-check text-emerald-500"></i> Licensed &amp; Insured[cite: 1]</span>
-                    <span class="flex items-center gap-2"><i class="fas fa-clock text-emerald-500"></i> Fast In-Home Testing[cite: 1, 6]</span>
-                    <span class="flex items-center gap-2"><i class="fas fa-tag text-emerald-500"></i> 100% Upfront Pricing[cite: 5]</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-shield-check text-emerald-500"></i> Licensed &amp; Insured</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-clock text-emerald-500"></i> Fast In-Home Testing</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-tag text-emerald-500"></i> 100% Upfront Pricing</span>
                 </div>
             </div>
         </div>
